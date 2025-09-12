@@ -1,0 +1,42 @@
+name: Build PDFs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install pandoc and LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-recommended
+    
+    - name: Build PDFs
+      run: |
+        mkdir -p build
+        pandoc docs/CDPM-Whitepaper.md -o build/CDPM-Whitepaper.pdf --pdf-engine=xelatex --toc
+        pandoc docs/CDPM-Glossar.md -o build/CDPM-Glossar.pdf --pdf-engine=xelatex
+        pandoc docs/CDPM-Toolkit.md -o build/CDPM-Toolkit.pdf --pdf-engine=xelatex
+    
+    - name: Upload PDFs as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: cdpm-pdfs
+        path: build/*.pdf
+    
+    - name: Release PDFs
+      if: github.event_name == 'release'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: build/*.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

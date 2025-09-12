@@ -6,9 +6,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Original documents (we use Markdown as source)
-Whitepaper/*.docx
-Whitepaper/*.pdf
+# Original documents (removed - we use Markdown as source)
 
 # Build artifacts
 *.pdf
