@@ -40,6 +40,40 @@ Context → Analysis → Guidance → Updates → Context*
 - Website: [contextdrivenpm.org](https://contextdrivenpm.org)
 - Contact: contact@contextdrivenpm.org
 
+## Development
+
+### Prerequisites
+
+To build the documentation locally, you need:
+
+- **Pandoc**: Document converter
+  ```bash
+  brew install pandoc
+  ```
+
+- **LaTeX** (for PDF generation):
+  ```bash
+  # Option 1: BasicTeX (smaller, ~100MB)
+  brew install --cask basictex
+  
+  # Option 2: Full MacTeX (complete, ~4GB)
+  brew install --cask mactex
+  ```
+
+After installing LaTeX, restart your terminal or run:
+```bash
+eval "$(/usr/libexec/path_helper)"
+```
+
+### Building Documentation
+
+Generate PDFs from Markdown sources:
+```bash
+./build.sh
+```
+
+The PDFs will be created in the `build/` directory.
+
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.

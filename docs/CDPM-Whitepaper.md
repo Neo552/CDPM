@@ -3,9 +3,7 @@ title: "Context Driven Project Management (CDPM)"
 description: "Projekte kontextzentriert mit Künstlicher Intelligenz transformieren - Ein methodenagnostisches Meta-Framework für holistische, KI-fähige Projektsteuerung"
 ---
 
-![Ein Bild, das Kreis, Farbigkeit, Fraktalkunst, Kunst enthält.
-KI-generierte Inhalte können fehlerhaft
-sein.](/static/media/image1.png)
+![CDPM Visualization](../static/media/image1.png)
 
 Context Driven Project Management (CDPM)
 
