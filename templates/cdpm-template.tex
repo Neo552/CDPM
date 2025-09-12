@@ -1,0 +1,135 @@
+% CDPM LaTeX Template - Clean & Minimal
+% Author: Simon Schwer
+% License: CC BY 4.0
+
+\documentclass[11pt,a4paper]{article}
+
+% Essential packages (all included in BasicTeX)
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Page geometry
+\geometry{
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm
+}
+
+% Font settings - use system fonts
+\setmainfont{Georgia}[
+  Ligatures=TeX,
+  Scale=1.0
+]
+\setsansfont{Helvetica Neue}[
+  Ligatures=TeX,
+  Scale=0.95
+]
+\setmonofont{Menlo}[
+  Scale=0.9
+]
+
+% Line spacing (1.5)
+\linespread{1.5}
+
+% Define CDPM blue
+\definecolor{cdpmblue}{RGB}{0,84,164}
+
+% Hyperref setup
+\hypersetup{
+  colorlinks=true,
+  linkcolor=cdpmblue,
+  urlcolor=cdpmblue,
+  citecolor=cdpmblue,
+  bookmarks=true,
+  bookmarksopen=true,
+  pdftitle={$title$},
+  pdfauthor={Simon Schwer},
+  pdfsubject={Context-Driven Project Management}
+}
+
+% Headers styling with sans-serif
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\normalfont\Large\bfseries\sffamily}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\large\bfseries\sffamily}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries\sffamily}}
+\makeatother
+
+% Title page formatting
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\LARGE\sffamily\bfseries\@title\par}
+    \vspace{1cm}
+    {\large\sffamily\@author\par}
+    \vspace{0.5cm}
+    {\large\sffamily\@date\par}
+  \end{center}
+  \vspace{2cm}
+}
+\makeatother
+
+% Table of contents with sans-serif
+\makeatletter
+\renewcommand\tableofcontents{%
+  \section*{\sffamily\contentsname}%
+  \@starttoc{toc}%
+}
+\makeatother
+
+% Graphics path
+\graphicspath{{../static/media/}}
+
+% Special characters
+\usepackage{textcomp}
+
+% Fix for pandoc's tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Code block environments for pandoc
+\newenvironment{Shaded}{}{}
+\newenvironment{Highlighting}[1][]{\verbatim}{\endverbatim}
+
+% Metadata
+$if(title)$
+\title{$title$}
+$endif$
+$if(author)$
+\author{$author$}
+$else$
+\author{Simon Schwer}
+$endif$
+$if(date)$
+\date{$date$}
+$else$
+\date{\today}
+$endif$
+
+\begin{document}
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(toc)$
+\tableofcontents
+\newpage
+$endif$
+
+$body$
+
+\end{document}

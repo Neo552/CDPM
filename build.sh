@@ -33,13 +33,12 @@ else
     pandoc docs/CDPM-Whitepaper.md \
       -o build/CDPM-Whitepaper.pdf \
       --pdf-engine=$PDF_ENGINE \
+      --template=templates/cdpm-template.tex \
       --toc \
       --toc-depth=3 \
-      -V geometry:margin=1in \
-      -V documentclass=report \
-      -V colorlinks=true \
-      -V linkcolor=blue \
-      -V urlcolor=blue
+      -V title="Context-Driven Project Management (CDPM)" \
+      -V author="Simon Schwer" \
+      -V date="$(date +%Y-%m-%d)"
 fi
 
 # Build CDPM Glossar
@@ -53,8 +52,10 @@ else
     pandoc docs/CDPM-Glossar.md \
       -o build/CDPM-Glossar.pdf \
       --pdf-engine=$PDF_ENGINE \
-      -V geometry:margin=1in \
-      -V colorlinks=true
+      --template=templates/cdpm-template.tex \
+      -V title="CDPM Glossar" \
+      -V author="Simon Schwer" \
+      -V date="$(date +%Y-%m-%d)"
 fi
 
 # Build CDPM Toolkit
@@ -68,8 +69,10 @@ else
     pandoc docs/CDPM-Toolkit.md \
       -o build/CDPM-Toolkit.pdf \
       --pdf-engine=$PDF_ENGINE \
-      -V geometry:margin=1in \
-      -V colorlinks=true
+      --template=templates/cdpm-template.tex \
+      -V title="CDPM Toolkit" \
+      -V author="Simon Schwer" \
+      -V date="$(date +%Y-%m-%d)"
 fi
 
 echo "Build complete! PDFs are in the build/ directory."
