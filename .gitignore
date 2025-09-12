@@ -8,10 +8,8 @@ Thumbs.db
 
 # Original documents (removed - we use Markdown as source)
 
-# Build artifacts
-*.pdf
-build/
-dist/
+# Build directory - PDFs are kept in version control
+# build/
 
 # Temp files
 *.tmp

@@ -1,95 +1,15 @@
 ---
-title: "Context Driven Project Management (CDPM)"
-description: "Projekte kontextzentriert mit Künstlicher Intelligenz transformieren - Ein methodenagnostisches Meta-Framework für holistische, KI-fähige Projektsteuerung"
+title: "Context-Driven Project Management"
+subtitle: "Projekte kontextzentriert mit KI transformieren"
+description: "Ein methodenagnostisches Meta-Framework für holistische, KI-fähige Projektsteuerung"
+toc: true
 ---
 
-![CDPM Visualization](../static/media/image1.png)
 
-Context Driven Project Management (CDPM)
 
-Projekte kontextzentriert mit Künstlicher Intelligenz transformieren
+# Executive Summary {.unnumbered}
 
-Inhalt
-
-[Executive Summary](#executive-summary)
-
-[Die Herausforderung](#die-herausforderung)
-
-[Die CDPM-Lösung](#die-cdpm-lösung)
-
-[Nutzen und nächste Schritte](#nutzen-und-nächste-schritte)
-
-[In Piloten projizierte Effekte:](#in-piloten-projizierte-effekte)
-
-[Start in 6 Wochen mit einem Pilotprojekt:](#start-in-6-wochen-mit-einem-pilotprojekt)
-
-[1 Hintergrund & Problemstellung](#hintergrund-problemstellung)
-
-[1.1 Projektrealität heute](#projektrealität-heute)
-
-[1.1.1 Symptome](#symptome)
-
-[1.1.2 Probleme](#probleme)
-
-[1.1.3 Implikationen](#implikationen)
-
-[1.2 Designprinzipien für die nächste Generation](#designprinzipien-für-die-nächste-generation)
-
-[2 CDPM: Paradigmenwechsel und Framework](#cdpm-paradigmenwechsel-und-framework)
-
-[2.1 Vom Artefakt zum Kontext: Ein neues Projektverständnis](#vom-artefakt-zum-kontext-ein-neues-projektverständnis)
-
-[2.2 Vier Bausteine im Kreislauf](#vier-bausteine-im-kreislauf)
-
-[2.2.1 Kontext -- Die strukturierte Projektwahrheit](#kontext-die-strukturierte-projektwahrheit)
-
-[2.2.2 Analyse -- Kontinuierliche Kontextprüfung](#analyse-kontinuierliche-kontextprüfung)
-
-[2.2.3 Guidance -- Vom Kontext zu wirksamen Schritten](#guidance-vom-kontext-zu-wirksamen-schritten)
-
-[2.2.4 Updates -- Destillation als Quality Gate](#updates-destillation-als-quality-gate)
-
-[2.3 Rollenmodell und Governance](#rollenmodell-und-governance)
-
-[2.3.1 Project Owner (PRO) -- Guardian of Context](#project-owner-pro-guardian-of-context)
-
-[2.3.2 Stakeholder -- Inhaltliche Entscheider](#stakeholder-inhaltliche-entscheider)
-
-[2.3.3 KI-Assistenz -- Katalysator](#ki-assistenz-katalysator)
-
-[2.4 Praktische Umsetzungsprinzipien](#praktische-umsetzungsprinzipien)
-
-[2.5 Betriebsrituale](#betriebsrituale)
-
-[2.6 Minimal Viable CDPM in 6 Schritten](#minimal-viable-cdpm-in-6-schritten)
-
-[3 Mehrwert](#mehrwert)
-
-[3.1 Operative Vorteile](#operative-vorteile)
-
-[3.2 Strategische Vorteile](#strategische-vorteile)
-
-[3.3 Kulturelle Vorteile](#kulturelle-vorteile)
-
-[Vergleich: Klassisch vs. Agile vs. CDPM (Kurzüberblick)](#vergleich-klassisch-vs-agile-vs-cdpm-kurzüberblick)
-
-[3.4 Zusammenfassung](#zusammenfassung)
-
-[4 Fazit](#fazit)
-
-[4.1 Kernnutzen auf einen Blick](#kernnutzen-auf-einen-blick)
-
-[4.2 Was sich grundlegend ändert](#was-sich-grundlegend-ändert)
-
-[4.3 Warum jetzt](#warum-jetzt)
-
-[4.4 Call-to-Action: CDPM-Mehrwert in wenigen Wochen](#call-to-action-cdpm-mehrwert-in-wenigen-wochen)
-
-[4.5 Schlussgedanke](#schlussgedanke)
-
-# Executive Summary
-
-## Die Herausforderung
+## Die Herausforderung {.unnumbered}
 
 Projektmanagement steht vor einem strukturellen Problem: Klassische
 Methoden arbeiten mit starren Plänen und verstreuten Artefakten, agile
@@ -99,7 +19,7 @@ Daher fehlt ihnen die Grundlage, die KI benötigt, um ihr
 Transformationspotential zu entfalten: eine vollständige, korrekte und
 aktuelle Datenbasis.
 
-## Die CDPM-Lösung
+## Die CDPM-Lösung {.unnumbered}
 
 CDPM ist ein methodenagnostisches Meta-Framework, das Projekte
 holistisch KI-ready macht und ersetzt dabei weder Agile noch klassisches
@@ -136,9 +56,9 @@ Während andere Ansätze KI nachträglich aufsetzen, ist CDPM von Grund auf
 dafür konzipiert -- mit sofort spürbarem Transparenz- und
 Produktivitätsgewinn.
 
-## Nutzen und nächste Schritte
+## Nutzen und nächste Schritte {.unnumbered}
 
-### In Piloten projizierte Effekte:
+### In Piloten projizierte Effekte: {.unnumbered}
 
 - **KI-Wirkungsgrad vervielfacht** -- aus punktueller Unterstützung wird
   ganzheitliche Projektintelligenz mit wertschöpfendem Fokus
@@ -155,7 +75,7 @@ Produktivitätsgewinn.
   jeder Entscheidung sichtbar, eindimensionales Produkt-, Budget- oder
   Timeline-Denken wird erschwert.
 
-### Start in 6 Wochen mit einem Pilotprojekt:
+### Start in 6 Wochen mit einem Pilotprojekt: {.unnumbered}
 
 - Woche 1-2: Basis-Kontext aufbauen, erste Action Items mit Zielbezug
   definieren. KI
@@ -316,7 +236,7 @@ Dieser Paradigmenwechsel bedeutet:
 CDPM orchestriert vier Kernbausteine in einem kontinuierlichen
 Kreislauf:
 
-### Kontext -- Die strukturierte Projektwahrheit
+### Kontext - Die strukturierte Projektwahrheit
 
 Der Kontext enthält alle projektrelevanten Elemente in semantischer
 Verknüpfung:
@@ -419,8 +339,8 @@ Rohsignale (Mails, Meetings, Tickets) werden zu Destillaten verdichtet:
 | **Operation** | Append | Merge | Reject |
 | **Status** | Proposed | Appended | Merged | Rejected |
 | **Änderungslog** | Inhaltliche Änderung |
-| **Actor** | Created_by [KI/Person] |
-| **Zeitstempel** | detected_at [YYYY-MM-DD HH:MM] · merged_at [YYYY-MM-DD HH:MM] etc. |
+| **Actor** | Created\_by [KI/Person] |
+| **Zeitstempel** | detected\_at [YYYY-MM-DD HH:MM] · merged\_at [YYYY-MM-DD HH:MM] etc. |
 | **Confidence (AI)** | Small | Medium | High |
 
 ## Rollenmodell und Governance
@@ -527,7 +447,7 @@ sinkt signifikant.
 Prognosen zu Terminen, Budget und Scope aktualisieren sich bei jedem
 Commit. Auswirkungen („+10 AT", „+150 k") werden sofort sichtbar.
 
-#### What‑if‑Analysen in Echtzeit
+#### What-if-Analysen in Echtzeit
 
 Szenarien (z. B. „+1 Team → --3 Wochen bei +90 k", „--2 Features →
 Termin hält") werden kontextkonsistent simuliert -- inklusive
@@ -539,7 +459,7 @@ Ableitung und Priorisierung erfolgen ziel- und wirkungsbasiert (Success
 Criteria, Risiken, kritischer Pfad), nicht kapazitätsgetrieben.
 Busy-Work wird reduziert.
 
-#### Niedrigere Plan‑Latenz
+#### Niedrigere Plan-Latenz
 
 Änderungen fließen über Destillate direkt in den Kontext; Artefakte
 aktualisieren sich daraus. Veraltete Pläne werden zur Ausnahme.
@@ -549,7 +469,7 @@ aktualisieren sich daraus. Veraltete Pläne werden zur Ausnahme.
 Risiken sind kontextverankert und mit Gegenmaßnahmen verlinkt; Risk
 Burndown ist jederzeit sichtbar.
 
-#### Tool‑agnostische Konsistenz
+#### Tool-agnostische Konsistenz
 
 Bestehende Tools können im Einsatz bleiben. Widersprüche zwischen
 Artefakten verschwinden, weil der Kontext führt.
@@ -573,9 +493,9 @@ Artefakten verschwinden, weil der Kontext führt.
 #### Besseres Portfoliomanagement
 
 Standardisierte Kontexte machen heterogene Projekte vergleichbar.
-Ressourcen‑Allokationen und Trade‑offs werden datenbasiert.
+Ressourcen-Allokationen und Trade-offs werden datenbasiert.
 
-#### Transparente Triade‑Entscheidungen (Zeit--Budget--Scope)
+#### Transparente Triade-Entscheidungen (Zeit-Budget-Scope)
 
 Jede Entscheidung erzeugt sofort einen erklärten Effekt; versteckte
 „Dehnungen" entfallen. Sponsoren sehen Konsequenzen vor dem Commit.
@@ -585,14 +505,14 @@ Jede Entscheidung erzeugt sofort einen erklärten Effekt; versteckte
 Früh sichtbare Engpässe (kritische Pfade, Abhängigkeiten) ermöglichen
 rechtzeitige Parallelisierung oder Gegenmaßnahmen.
 
-#### Compliance & Audit‑Fähigkeit by Design
+#### Compliance & Audit-Fähigkeit by Design
 
-Versionierung mit Commit‑Log (Wer? Wann? Warum? Effekt?) reduziert
+Versionierung mit Commit-Log (Wer? Wann? Warum? Effekt?) reduziert
 Prüfaufwand und Diskussionskosten.
 
 #### Planbarkeit ohne Starrheit
 
-Rolling‑Forecast + Baselines liefern belastbare Steuerungsgrundlagen
+Rolling-Forecast + Baselines liefern belastbare Steuerungsgrundlagen
 auch bei hoher Dynamik.
 
 #### Messgrößen (strategisch)
@@ -600,9 +520,9 @@ auch bei hoher Dynamik.
 - Outcome Alignment: Fortschritt der Success Criteria vs. Aufwand/Kosten
   ↑
 
-- Forecast‑Accuracy‑Delta: Prognosegüte ggü. Baseline verbessert ↑
+- Forecast-Accuracy-Delta: Prognosegüte ggü. Baseline verbessert ↑
 
-- Portfolio‑Transparenz: Anteil vergleichbar gemachter Projekte ↑
+- Portfolio-Transparenz: Anteil vergleichbar gemachter Projekte ↑
 
 ## Kulturelle Vorteile
 
@@ -617,48 +537,48 @@ Alle Sichten und Stakeholder referenzieren denselben Kontext;
 Diskussionen drehen sich um Effekte, nicht um Dateistände oder
 Meinungen.
 
-#### Schnellere Onboarding‑Zeit
+#### Schnellere Onboarding-Zeit
 
 Neue Teammitglieder verstehen den Projektstand über den Kontext und den
-Audit‑Trail -- Wissen bleibt im Projektverlauf erhalten.
+Audit-Trail -- Wissen bleibt im Projektverlauf erhalten.
 
 #### Gesunde Fehlerkultur
 
 Änderungen sind erwartete Impulse; transparente Deltas verhindern
-„Watermelon‑Effekte".
+„Watermelon-Effekte".
 
 #### Messgrößen (kulturell)
 
-- Onboarding‑Zeit neuer Beteiligter ↓
+- Onboarding-Zeit neuer Beteiligter ↓
 
-- Anteil beschlossener Trade‑offs mit dokumentiertem Effekt ↑
+- Anteil beschlossener Trade-offs mit dokumentiertem Effekt ↑
 
-- Scope‑Creep‑Rate (ungeplante Umfangszuwächse) ↓
+- Scope-Creep-Rate (ungeplante Umfangszuwächse) ↓
 
 ### Vergleich: Klassisch vs. Agile vs. CDPM (Kurzüberblick)
 
 | Aspekt | Klassisch | Agile | CDPM |
 |--------|-----------|-------|------|
 | Führungsgröße | Plan/Artefakte | Sprint/Backlog | Kontext (SSOT) |
-| Umgang mit Änderung | Schwergewichtig, langsam | Flexibel, lokal | Sofortige Destillation → Rolling‑Forecast |
-| Priorisierung | Meilenstein/Scope | Team‑Kapazität | Ziel‑ & Impact‑basiert |
-| Transparenz Triade | Spät sichtbar | Häufig implizit | Explizite Zeit--Budget--Scope‑Effekte |
-| Reporting | Zusatzaufwand | Sprint‑fokussiert | Automatisierte Projektion |
-| KI‑Eignung | Niedrig (Fragmentierung) | Mittel (lokal) | Hoch (strukturierte Datenbasis) |
+| Umgang mit Änderung | Schwergewichtig, langsam | Flexibel, lokal | Sofortige Destillation → Rolling-Forecast |
+| Priorisierung | Meilenstein/Scope | Team-Kapazität | Ziel- & Impact-basiert |
+| Transparenz Triade | Spät sichtbar | Häufig implizit | Explizite Zeit-Budget-Scope-Effekte |
+| Reporting | Zusatzaufwand | Sprint-fokussiert | Automatisierte Projektion |
+| KI-Eignung | Niedrig (Fragmentierung) | Mittel (lokal) | Hoch (strukturierte Datenbasis) |
 
 CDPM ersetzt weder klassische noch agile Methoden -- es ergänzt sie um
 die fehlende Kontextebene und macht beide Ansätze vergleichbar und
-KI‑fähig.
+KI-fähig.
 
 ## Zusammenfassung
 
 CDPM verschiebt die Führungsgröße vom Artefakt zum Kontext. Dadurch
 werden operative Abläufe schneller und konsistenter, strategische
 Entscheidungen faktenbasiert und die Zusammenarbeit transparenter.
-Messbare Effekte zeigen sich früh: geringere Delta‑Latenz, stabilere
-Forecasts, weniger Scope‑Creep und ein spürbarer Produktivitätsgewinn im
+Messbare Effekte zeigen sich früh: geringere Delta-Latenz, stabilere
+Forecasts, weniger Scope-Creep und ein spürbarer Produktivitätsgewinn im
 Reporting. Kurz: mehr Wirkung pro investiertem Projekttag -- heute
-nutzbar, tool‑agnostisch und KI‑ready by design.
+nutzbar, tool-agnostisch und KI-ready by design.
 
 # Fazit
 

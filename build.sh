@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # CDPM Documentation Build Script
 # Generates PDF files from Markdown sources
@@ -8,71 +9,97 @@ echo "Building CDPM documentation..."
 # Create build directory if it doesn't exist
 mkdir -p build
 
-# Check for available PDF engines
-if command -v xelatex &> /dev/null; then
+# Check for available PDF engines (prefer modern engines for fontspec)
+if command -v lualatex &> /dev/null; then
+    PDF_ENGINE="lualatex"
+elif command -v xelatex &> /dev/null; then
     PDF_ENGINE="xelatex"
-elif command -v pdflatex &> /dev/null; then
-    PDF_ENGINE="pdflatex"
+elif command -v wkhtmltopdf &> /dev/null; then
+    # HTML path using wkhtmltopdf with CSS fallback
+    PDF_ENGINE="html-wkhtml"
 else
-    # Use HTML intermediate with wkhtmltopdf or default engine
+    # Basic HTML-to-PDF fallback (may not embed fonts reliably)
     PDF_ENGINE="html"
 fi
 
 echo "Using PDF engine: $PDF_ENGINE"
 
+# Document meta defaults
+LINE_SPACING=${LINE_SPACING:-1.4}  # 1.4 by default
+VERSION=${VERSION:-v1.0}
+DOC_LANG=${DOC_LANG:-DE}  # Changed from LANG to DOC_LANG to avoid conflict
+DOC_DATE=${DOC_DATE:-$(date +%Y-%m-%d)}
+
+build_with_engine() {
+  local input_md=$1
+  local output_pdf=$2
+  shift 2
+  local extra_args=("$@")
+
+  case "$PDF_ENGINE" in
+    xelatex|lualatex)
+      # Direct PDF generation via pandoc with LaTeX engine
+      pandoc -f markdown+yaml_metadata_block+smart "$input_md" \
+        -o "$output_pdf" \
+        --pdf-engine="$PDF_ENGINE" \
+        --template=templates/cdpm-template.tex \
+        --lua-filter=templates/icons.lua \
+        --lua-filter=templates/unicode-fallback.lua \
+        --resource-path=.:docs:static:static/media \
+        -V author="Simon Schwer" \
+        -V date="$DOC_DATE" \
+        -V version="$VERSION" \
+        -V lang="$DOC_LANG" \
+        -V linestretch=$LINE_SPACING \
+        "${extra_args[@]}"
+      ;;
+    html-wkhtml)
+      pandoc -f markdown+yaml_metadata_block+smart "$input_md" \
+        -o "$output_pdf" \
+        --pdf-engine=wkhtmltopdf \
+        --toc \
+        --toc-depth=2 \
+        --css=templates/cdpm.css \
+        --lua-filter=templates/icons.lua \
+        --lua-filter=templates/unicode-fallback.lua \
+        --resource-path=.:docs:static:static/media \
+        -V margin-left=1.3in \
+        -V margin-right=1.3in \
+        -V margin-top=1in \
+        -V margin-bottom=1in \
+        "${extra_args[@]}"
+      ;;
+    html)
+      echo "Warning: No LaTeX engine or wkhtmltopdf found. Falling back to basic HTML PDF. Fonts may not embed; install XeLaTeX for best results." >&2
+      pandoc -f markdown+yaml_metadata_block+smart "$input_md" \
+        -o "$output_pdf" \
+        --toc \
+        --toc-depth=2 \
+        --lua-filter=templates/icons.lua \
+        --lua-filter=templates/unicode-fallback.lua \
+        --resource-path=.:docs:static:static/media \
+        --css=templates/cdpm.css \
+        "${extra_args[@]}"
+      ;;
+  esac
+}
+
 # Build CDPM Whitepaper
 echo "- Building CDPM Whitepaper PDF..."
-if [ "$PDF_ENGINE" = "html" ]; then
-    pandoc docs/CDPM-Whitepaper.md \
-      -o build/CDPM-Whitepaper.pdf \
-      --toc \
-      --toc-depth=3 \
-      -V geometry:margin=1in \
-      -V colorlinks=true
-else
-    pandoc docs/CDPM-Whitepaper.md \
-      -o build/CDPM-Whitepaper.pdf \
-      --pdf-engine=$PDF_ENGINE \
-      --template=templates/cdpm-template.tex \
-      --toc \
-      --toc-depth=3 \
-      -V title="Context-Driven Project Management (CDPM)" \
-      -V author="Simon Schwer" \
-      -V date="$(date +%Y-%m-%d)"
-fi
+build_with_engine docs/CDPM-Whitepaper.md build/CDPM-Whitepaper.pdf \
+  -V docname="CDPM-Whitepaper" \
+  -V coverimage="image1.png" \
+  -V cover_height=0.35\\paperheight \
+  -V title_top=2.0cm \
+  -V after_cover_space=0.5cm \
+  -V title_metadata_gap=0.6cm
 
-# Build CDPM Glossar
 echo "- Building CDPM Glossar PDF..."
-if [ "$PDF_ENGINE" = "html" ]; then
-    pandoc docs/CDPM-Glossar.md \
-      -o build/CDPM-Glossar.pdf \
-      -V geometry:margin=1in \
-      -V colorlinks=true
-else
-    pandoc docs/CDPM-Glossar.md \
-      -o build/CDPM-Glossar.pdf \
-      --pdf-engine=$PDF_ENGINE \
-      --template=templates/cdpm-template.tex \
-      -V title="CDPM Glossar" \
-      -V author="Simon Schwer" \
-      -V date="$(date +%Y-%m-%d)"
-fi
+build_with_engine docs/CDPM-Glossar.md build/CDPM-Glossar.pdf \
+  -V docname="CDPM-Glossar"
 
-# Build CDPM Toolkit
 echo "- Building CDPM Toolkit PDF..."
-if [ "$PDF_ENGINE" = "html" ]; then
-    pandoc docs/CDPM-Toolkit.md \
-      -o build/CDPM-Toolkit.pdf \
-      -V geometry:margin=1in \
-      -V colorlinks=true
-else
-    pandoc docs/CDPM-Toolkit.md \
-      -o build/CDPM-Toolkit.pdf \
-      --pdf-engine=$PDF_ENGINE \
-      --template=templates/cdpm-template.tex \
-      -V title="CDPM Toolkit" \
-      -V author="Simon Schwer" \
-      -V date="$(date +%Y-%m-%d)"
-fi
+build_with_engine docs/CDPM-Toolkit.md build/CDPM-Toolkit.pdf \
+  -V docname="CDPM-Toolkit"
 
 echo "Build complete! PDFs are in the build/ directory."

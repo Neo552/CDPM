@@ -1,6 +1,8 @@
 ---
 title: "CDPM Glossar"
+subtitle: "Begriffe und Konzepte"
 description: "Zentrale Begriffe des Context Driven Project Management (CDPM) Ansatzes in alphabetischer Reihenfolge mit Querverweisen"
+toc: true
 ---
 
 # Glossar
@@ -21,7 +23,7 @@ Splitting/Merging, Re-Priorisierung und Statusänderungen.
 **Abhängigkeit (Dependency)**
 
 Beziehung zwischen Kontextelementen (z. B. AI ↔ Meilenstein/Komponente),
-deren Termin‑/Budget‑/Risikowirkung im Kontext rechnerisch ermittelt
+deren Termin-/Budget-/Risikowirkung im Kontext rechnerisch ermittelt
 wird.
 
 *Siehe auch: Kritischer Pfad, Projektion, Rolling Forecast.*
@@ -39,13 +41,13 @@ Committed → In Progress → Blocked/At Risk → Done/Cancelled.
 Kontinuierliche Prüfung des Kontextes auf Vollständigkeit,
 Plausibilität, Konsistenz, Zielbezug, kritische Pfade sowie
 Forecast/Szenarien. Ergebnis: priorisierte Findings mit
-Guidance‑Impulsen.
+Guidance-Impulsen.
 
-*Siehe auch: Kontext, Rolling Forecast, What‑if‑Analyse.*
+*Siehe auch: Kontext, Rolling Forecast, What-if-Analyse.*
 
 **Artefakt**
 
-Abgeleitete Sicht (z. B. Gantt, Backlog, Risiko‑Register, Report). In
+Abgeleitete Sicht (z. B. Gantt, Backlog, Risiko-Register, Report). In
 CDPM stets „thin" und nie führend; die Quelle ist der Kontext.
 
 *Siehe auch: Projektion, Context First.*
@@ -77,13 +79,13 @@ Meilensteinen und Action Items verknüpft.
 
 **CDPM (Context Driven Project Management)**
 
-Meta‑Framework, das klassische & agile Ansätze um eine führende
+Meta-Framework, das klassische & agile Ansätze um eine führende
 Kontextebene (SSOT) ergänzt, damit KI wirksam wird und Steuerung prüfbar
 bleibt.
 
 *Siehe auch: Kontext, SSOT.*
 
-**Commit (Kontext‑Commit)**
+**Commit (Kontext-Commit)**
 
 Freigegebene Kontextänderung (durch PRO) mit ausgewiesenem Effekt
 (Zeit/Budget/Scope/Ziel) und Quellenverweis(en).
@@ -104,11 +106,11 @@ Felder/Beziehungen < x Tage).
 
 *Siehe auch: Delta Latency, Forecast Stability.*
 
-**Context‑/Analysis‑/Guidance‑/Update/Destillation‑/Reporting‑Agent**
+**Context-/Analysis-/Guidance-/Update/Destillation-/Reporting-Agent**
 
-KI‑Agentenrollen in CDPM: erzeugen/prüfen Kontext, erstellen Forecasts &
-Szenarien, leiten AIs ab, destillieren Updates und generieren Reports --
-stets read → propose → justify, ohne Auto‑Commit.
+KI-Agentenrollen in CDPM: erzeugen/prüfen Kontext, erstellen Forecasts &
+Szenarien, leiten AIs ab, destillieren Updates und generieren Reports -
+stets read → propose → justify, ohne Auto-Commit.
 
 *Siehe auch: KI, Governance.*
 
@@ -122,15 +124,15 @@ Metrik: Anteil der Action Items mit explizitem Zielbezug/Abhängigkeiten.
 
 **Daily Destillation Window**
 
-Tägliches Kurzritual (10--20 min) zum Prüfen & Committen kleiner
+Tägliches Kurzritual (10-20 min) zum Prüfen & Committen kleiner
 Destillate.
 
 *Siehe auch: Destillat, PRO.*
 
 **Delta Latency**
 
-Metrik: Zeit vom Roh‑Update bis zum Kontext‑Commit (bzw. bis zum
-KI‑Vorschlag).
+Metrik: Zeit vom Roh-Update bis zum Kontext-Commit (bzw. bis zum
+KI-Vorschlag).
 
 *Siehe auch: Context Freshness, Destillation.*
 
@@ -163,7 +165,7 @@ Baseline.
 
 **Governance Board / Sponsorship**
 
-Entscheidet strategische Trade‑offs und zeichnet Entscheidungen prüfbar;
+Entscheidet strategische Trade-offs und zeichnet Entscheidungen prüfbar;
 konsumiert Projektionen (Roadmap, Forecast, Szenarien).
 
 *Siehe auch: PRO, Projektion.*
@@ -177,15 +179,15 @@ konsumiert Projektionen (Roadmap, Forecast, Szenarien).
 **KI (Künstliche Intelligenz)**
 
 Katalysator im CDPM für Ingest, Analyse, Guidance, Destillation und
-Reporting -- mit Erklärbarkeit & Quellen; Entscheidungen bleiben beim
+Reporting - mit Erklärbarkeit & Quellen; Entscheidungen bleiben beim
 Menschen (PRO/Board).
 
-*Siehe auch: Agenten, Destillat, What‑if‑Analyse.*
+*Siehe auch: Agenten, Destillat, What-if-Analyse.*
 
-**Konfidenz (KI‑Vorschlag)**
+**Konfidenz (KI-Vorschlag)**
 
-Selbstauskunft zur Sicherheit/Beleglage eines KI‑Vorschlags; unterstützt
-die PRO‑Prüfung.
+Selbstauskunft zur Sicherheit/Beleglage eines KI-Vorschlags; unterstützt
+die PRO-Prüfung.
 
 *Siehe auch: KI, Governance.*
 
@@ -215,15 +217,15 @@ wird im Kontext fortlaufend neu berechnet.
 
 **Meilenstein**
 
-Zeitlich definierter Kontroll‑/Lieferpunkt, semantisch mit Zielen, AIs,
+Zeitlich definierter Kontroll-/Lieferpunkt, semantisch mit Zielen, AIs,
 Abhängigkeiten und Budgetwirkung verknüpft.
 
 *Siehe auch: Projektion, Timeline, Success Criteria.*
 
-**MV‑CDPM (Minimal Viable CDPM)**
+**MV-CDPM (Minimal Viable CDPM)**
 
-Kleinstes lauffähiges Setup: Basis‑Kontext, erste Analyse, Top‑AIs,
-Destillationskanal, Rolling‑Forecast‑Projektion, Baseline‑0.
+Kleinstes lauffähiges Setup: Basis-Kontext, erste Analyse, Top-AIs,
+Destillationskanal, Rolling-Forecast-Projektion, Baseline-0.
 
 *Siehe auch: Baseline, Rolling Forecast.*
 
@@ -240,21 +242,21 @@ Aufwand/Kosten.
 
 **Pending Update**
 
-Unvalidiertes Roh‑Signal (Mail, Meeting, Ticket etc.); wird erst nach
+Unvalidiertes Roh-Signal (Mail, Meeting, Ticket etc.); wird erst nach
 Destillation & Commit Teil der Projektwahrheit.
 
 *Siehe auch: Update, Destillat.*
 
-**Portfolio‑Management (im CDPM)**
+**Portfolio-Management (im CDPM)**
 
 Vergleichbarkeit heterogener Projekte über standardisierte Kontexte;
-ermöglicht objektive Ressourcen‑/Trade‑off‑Entscheidungen.
+ermöglicht objektive Ressourcen-/Trade-off-Entscheidungen.
 
 *Siehe auch: SSOT, Projektion.*
 
 **PRO (Project Owner)**
 
-Kontext‑Verantwortliche:r. Führt Destillation, priorisiert Guidance,
+Kontext-Verantwortliche:r. Führt Destillation, priorisiert Guidance,
 setzt Baselines, genehmigt Commits; Reporting entsteht als Projektion.
 
 *Siehe auch: Governance, Daily Destillation Window.*
@@ -262,7 +264,7 @@ setzt Baselines, genehmigt Commits; Reporting entsteht als Projektion.
 **Projektion (Sicht)**
 
 Automatisch/halbautomatisch aus dem Kontext abgeleitete Darstellung
-(Roadmap/Gantt, Backlog, Risiko‑Register, Report, Finanzsicht).
+(Roadmap/Gantt, Backlog, Risiko-Register, Report, Finanzsicht).
 
 *Siehe auch: Artefakt, Context First.*
 
@@ -283,7 +285,7 @@ A=Accountable (Sponsor/Board), C=Consulted (Fachexperten), I=Informed
 
 *Siehe auch: Governance, PRO.*
 
-**Re‑Evaluation (von AIs)**
+**Re-Evaluation (von AIs)**
 
 Erneute Bewertung/Anpassung von Action Items bei Kontextänderungen
 (z. B. Umpriorisierung, Splits/Merges, Statuswechsel).
@@ -292,12 +294,12 @@ Erneute Bewertung/Anpassung von Action Items bei Kontextänderungen
 
 **Reporting (automatisiert)**
 
-Status‑, Delta‑, Risiko‑ und Finanzberichte als Nebenprodukt des
+Status-, Delta-, Risiko- und Finanzberichte als Nebenprodukt des
 Kontextes; keine Doppelpflege.
 
 *Siehe auch: Projektion, Outcome Alignment.*
 
-**Risk Burn‑down**
+**Risk Burn-down**
 
 Metrik: Reduktion der gewichteten Risikolage durch erledigte
 AIs/Gegenmaßnahmen.
@@ -306,7 +308,7 @@ AIs/Gegenmaßnahmen.
 
 **Roadmap / Gantt (Thin Artefacts)**
 
-Zeitliche Projektion aus Milestones, Dependencies und AIs -- ohne
+Zeitliche Projektion aus Milestones, Dependencies und AIs - ohne
 eigenständige Wahrheit.
 
 *Siehe auch: Projektion, Context First.*
@@ -316,20 +318,20 @@ eigenständige Wahrheit.
 Fortlaufend aktualisierte Prognose (Zeit/Budget/Scope) zwischen
 Baselines; reagiert unmittelbar auf Commits.
 
-*Siehe auch: Baseline, What‑if‑Analyse.*
+*Siehe auch: Baseline, What-if-Analyse.*
 
 ## S
 
 **Scope**
 
 Umfang/Leistungsinhalt des Projekts; eine Seite der Triade
-(Zeit--Budget--Scope).
+(Zeit-Budget-Scope).
 
 *Siehe auch: Triade, Scope Creep.*
 
 **Scope Creep**
 
-Schleichende Umfangserweiterung ohne transparente Impact‑Analyse; wird
+Schleichende Umfangserweiterung ohne transparente Impact-Analyse; wird
 in CDPM durch Kontextpflicht & Destillation eingedämmt.
 
 *Siehe auch: Scope, Destillat.*
@@ -351,7 +353,7 @@ Steuerbarkeit/Redundanzvermeidung.
 **Stakeholder**
 
 Beteiligte/Betroffene, die Updates erzeugen, Inhalte liefern, AIs
-umsetzen -- ohne Kontextfreigabezuständigkeit.
+umsetzen - ohne Kontextfreigabezuständigkeit.
 
 *Siehe auch: Erweiterungskomponenten, PRO.*
 
@@ -371,26 +373,26 @@ Zeitachse inkl. Meilensteinen/Terminen; Effekte werden als Deltas (z. B.
 
 *Siehe auch: Kritischer Pfad, Rolling Forecast.*
 
-**Tool‑Agnostik**
+**Tool-Agnostik**
 
-Kontextmodell ist unabhängig vom Tool‑Stack (Jira, MS Project,
+Kontextmodell ist unabhängig vom Tool-Stack (Jira, MS Project,
 SharePoint etc.); Integration über Connectoren.
 
 *Siehe auch: SSOT, Projektion.*
 
-**Triade (Zeit--Budget--Scope)**
+**Triade (Zeit-Budget-Scope)**
 
 Explizit zu steuerndes Spannungsfeld; jede Entscheidung erzeugt einen
-transparenten Trade‑off.
+transparenten Trade-off.
 
-*Siehe auch: What‑if‑Analyse, Rolling Forecast.*
+*Siehe auch: What-if-Analyse, Rolling Forecast.*
 
 ## U
 
 **Update**
 
 Jedes Signal mit potenzieller Projektauswirkung; wird erst als Destillat
-nach PRO‑Freigabe wirksam.
+nach PRO-Freigabe wirksam.
 
 *Siehe auch: Pending Update, Destillation.*
 
@@ -405,29 +407,29 @@ fachlicher Deltas und Begründungen.
 
 ## W
 
-**Watermelon‑Effekt**
+**Watermelon-Effekt**
 
-Status außen grün, innen rot -- entsteht durch artefaktzentrierte
+Status außen grün, innen rot - entsteht durch artefaktzentrierte
 Kosmetik; CDPM adressiert dies mit Kontextführerschaft & Metriken.
 
 *Siehe auch: Reporting, Analyse.*
 
 **Weekly Context Review**
 
-Wöchentliches Ritual zur Besprechung von Analyse‑Findings, kritischen
+Wöchentliches Ritual zur Besprechung von Analyse-Findings, kritischen
 Pfaden und Priorisierung der Guidance.
 
 *Siehe auch: Analyse, Ableitung.*
 
-**What‑if‑Analyse / Szenario**
+**What-if-Analyse / Szenario**
 
-Simulation von Varianten (z. B. „+1 Team → --3 Wochen bei +90 k"), mit
-sofort sichtbaren Triade‑Effekten im Kontext.
+Simulation von Varianten (z. B. „+1 Team → -3 Wochen bei +90 k"), mit
+sofort sichtbaren Triade-Effekten im Kontext.
 
 *Siehe auch: Rolling Forecast, Triade.*
 
 ---
 
-*Hinweis: Begriffe sind auf den CDPM‑Entwurf abgestimmt.
-Unternehmens‑/Branchenspezifika lassen sich durch zusätzliche
+*Hinweis: Begriffe sind auf den CDPM-Entwurf abgestimmt.
+Unternehmens-/Branchenspezifika lassen sich durch zusätzliche
 Kontextelemente und Metriken ergänzen.*

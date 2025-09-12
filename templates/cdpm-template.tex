@@ -1,43 +1,115 @@
-% CDPM LaTeX Template - Clean & Minimal
+% CDPM LaTeX Template - Professional Typography
 % Author: Simon Schwer
 % License: CC BY 4.0
 
 \documentclass[11pt,a4paper]{article}
 
-% Essential packages (all included in BasicTeX)
+% Essential packages
 \usepackage{fontspec}
 \usepackage{geometry}
-\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[ngerman]{babel}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{calc}
+\usepackage{array}  % MUSS vor longtable kommen
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{hyperref}  % sollte meist als letztes kommen
+% Total pages (optional)
+\newcommand{\TotalPages}{}
+\newcommand{\OfLabel}{}
+\IfFileExists{lastpage.sty}{\usepackage{lastpage}\renewcommand{\TotalPages}{\pageref{LastPage}}\renewcommand{\OfLabel}{ von }}{}
 
-% Page geometry
+% Page geometry with proper margins
 \geometry{
   a4paper,
-  top=2.5cm,
-  bottom=2.5cm,
-  left=2.5cm,
-  right=2.5cm
+  top=2.8cm,
+  bottom=3.2cm,
+  headheight=16pt,
+  headsep=12pt,
+  footskip=18pt,
+  textwidth=5.7in
 }
 
-% Font settings - use system fonts
-\setmainfont{Georgia}[
-  Ligatures=TeX,
-  Scale=1.0
-]
-\setsansfont{Helvetica Neue}[
-  Ligatures=TeX,
-  Scale=0.95
-]
-\setmonofont{Menlo}[
-  Scale=0.9
-]
+% Language (hyphenation/spacing)
+% handled by babel (ngerman)
 
-% Line spacing (1.5)
-\linespread{1.5}
+% Font settings - Source family with explicit variable font mapping (ensures bold/italic)
+% Many systems install Google variable fonts (wght/opsz[/ital]). We explicitly map series/shape
+% so that \bfseries and \itshape pick true weights instead of falling back to Regular.
+\IfFontExistsTF{Source Serif 4}{%
+  \setmainfont{Source Serif 4}[
+    Ligatures=TeX,
+    UprightFeatures      = {RawFeature={+wght=400}},
+    BoldFeatures         = {RawFeature={+wght=700}},
+    ItalicFont           = {Source Serif 4},
+    ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
+    BoldItalicFont       = {Source Serif 4},
+    BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
+  ]
+}{%
+  % Static fallback family
+  \IfFontExistsTF{Source Serif Pro}{\setmainfont{Source Serif Pro}[Ligatures=TeX]}{% 
+    \PackageError{cdpm-template}{Required serif font not found}{Install 'Source Serif 4' (or 'Source Serif Pro') and rebuild.}%
+  }
+}
+
+\IfFontExistsTF{Source Sans 3}{%
+  \setsansfont{Source Sans 3}[
+    Ligatures=TeX,
+    UprightFeatures      = {RawFeature={+wght=400}},
+    BoldFeatures         = {RawFeature={+wght=700}},
+    ItalicFont           = {Source Sans 3},
+    ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
+    BoldItalicFont       = {Source Sans 3},
+    BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
+  ]
+}{%
+  \IfFontExistsTF{Source Sans Pro}{\setsansfont{Source Sans Pro}[Ligatures=TeX]}{% 
+    \PackageError{cdpm-template}{Required sans-serif font not found}{Install 'Source Sans 3' (or 'Source Sans Pro') and rebuild.}%
+  }
+}
+
+% Mono font – Source Code Pro variable mapping
+\IfFontExistsTF{Source Code Pro}{%
+  \setmonofont{Source Code Pro}[
+    Scale=0.9,
+    UprightFeatures    = {RawFeature={+wght=400}},
+    BoldFeatures       = {RawFeature={+wght=700}},
+    ItalicFont         = {Source Code Pro},
+    ItalicFeatures     = {RawFeature={+ital=1,+wght=400}},
+    BoldItalicFont     = {Source Code Pro},
+    BoldItalicFeatures = {RawFeature={+ital=1,+wght=700}}
+  ]
+}{%
+  \PackageError{cdpm-template}{Required mono font not found}{Install 'Source Code Pro' and rebuild.}%
+}
+
+% Line spacing (configurable via Pandoc var: linestretch)
+$if(linestretch)$
+\setstretch{$linestretch$}
+$else$
+\setstretch{1.15}
+$endif$
+
+% Unicode fallback handled via Pandoc Lua filter (templates/unicode-fallback.lua)
+
+% Paragraph spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+% Improve page breaks and spacing
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
 
 % Define CDPM blue
 \definecolor{cdpmblue}{RGB}{0,84,164}
+\definecolor{cdpmgray}{gray}{0.4}
 
 % Hyperref setup
 \hypersetup{
@@ -52,61 +124,110 @@
   pdfsubject={Context-Driven Project Management}
 }
 
-% Headers styling with sans-serif
+% Section formatting with sans-serif
 \makeatletter
 \renewcommand\section{\@startsection{section}{1}{\z@}%
-  {-3.5ex \@plus -1ex \@minus -.2ex}%
-  {2.3ex \@plus.2ex}%
+  {-2ex \@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus.2ex}%
   {\normalfont\Large\bfseries\sffamily}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-  {-3.25ex\@plus -1ex \@minus -.2ex}%
-  {1.5ex \@plus .2ex}%
+  {-1.5ex\@plus -1ex \@minus -.2ex}%
+  {1ex \@plus .2ex}%
   {\normalfont\large\bfseries\sffamily}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-  {-3.25ex\@plus -1ex \@minus -.2ex}%
-  {1.5ex \@plus .2ex}%
+  {-1ex\@plus -1ex \@minus -.2ex}%
+  {0.5ex \@plus .2ex}%
   {\normalfont\normalsize\bfseries\sffamily}}
 \makeatother
 
-% Title page formatting
+% Title formatting (not used with titlepage)
 \makeatletter
 \renewcommand{\maketitle}{
+  % This is only used if titlepage is not active
   \begin{center}
     {\LARGE\sffamily\bfseries\@title\par}
+    $if(subtitle)$
+    % Consistent title–subtitle spacing
+    \vspace{\CDPMTitleSubtitleSep}
+    {\large\sffamily\color{cdpmblue}\subtitle\par}
+    $endif$
     \vspace{1cm}
     {\large\sffamily\@author\par}
     \vspace{0.5cm}
     {\large\sffamily\@date\par}
   \end{center}
-  \vspace{2cm}
+  \vspace{1.5cm}
+  \thispagestyle{empty}
 }
 \makeatother
 
-% Table of contents with sans-serif
-\makeatletter
-\renewcommand\tableofcontents{%
-  \section*{\sffamily\contentsname}%
-  \@starttoc{toc}%
-}
-\makeatother
+% TOC with sans-serif
+% Use default table of contents heading (babel handles German label)
+
+% Running headers/footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\color{cdpmblue}\small $if(docname)$$docname$$else$\TitleText$endif$}
+\fancyhead[C]{\sffamily\color{cdpmblue}\small $if(version)$Version $version$$endif$}
+\fancyhead[R]{\sffamily\color{cdpmblue}\small $if(lang)$$lang$$endif$}
+\fancyfoot[L]{\sffamily\color{cdpmgray}\fontsize{8}{9.6}\selectfont
+  Seite\ \thepage\ifx\TotalPages\empty\else\ \OfLabel\TotalPages\fi\ \textcopyright\ \the\year\ Simon\ Schwer\ ·\ Inhalte:\ CC\ BY\ 4.0\ ·\ „CDPM“,\ „Guardian\ of\ Context“\ sind\ Marken\ von\ Simon\ Schwer\ (Schutz\ in\ Deutschland\ beantragt)\ –\ Nutzung\ gem.\ CDPM-Nutzungsrichtlinie\ ·\ contextdrivenpm.org/license\ ·\ contact@contextdrivenpm.org}
 
 % Graphics path
-\graphicspath{{../static/media/}}
+\graphicspath{{./}{../}{static/}{static/media/}{../static/}{../static/media/}}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-% Special characters
-\usepackage{textcomp}
-
-% Fix for pandoc's tightlist
+% Pandoc compatibility
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
 
-% Code block environments for pandoc
+% Fix für fehlende Kommandos
+\providecommand{\arraybackslash}{}
+% Fix für calc Paket
+\makeatletter
+\@ifundefined{real}{\newcommand{\real}[1]{#1}}{}
+\makeatother
+
+% Code blocks
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small}
 \newenvironment{Shaded}{}{}
-\newenvironment{Highlighting}[1][]{\verbatim}{\endverbatim}
+
+% Captions
+\usepackage[labelfont=bf,font=small]{caption}
+
+% Lists with better spacing
+\usepackage{enumitem}
+\setlist{itemsep=0.3em,parsep=0pt,topsep=0.5em}
 
 % Metadata
 $if(title)$
 \title{$title$}
+$endif$
+$if(docid)$
+\newcommand{\DocID}{$docid$}
+$else$
+\newcommand{\DocID}{$title$ $if(version)$v$version$ $endif$– $if(date)$$date$ $endif$$if(lang)$ $lang$$endif$}
+$endif$
+$if(title)$
+\newcommand{\TitleText}{$title$}
+$else$
+\newcommand{\TitleText}{CDPM}
+$endif$
+$if(subtitle)$
+\newcommand{\subtitle}{$subtitle$}
+$else$
+$if(description)$
+\newcommand{\subtitle}{$description$}
+$else$
+\newcommand{\subtitle}{}
+$endif$
 $endif$
 $if(author)$
 \author{$author$}
@@ -122,7 +243,81 @@ $endif$
 \begin{document}
 
 $if(title)$
-\maketitle
+% Title page
+\begin{titlepage}
+\centering
+% --- Unified vertical spacing for title page header area ---
+% Configure top space and (optional) cover image height via Pandoc variables
+% Usage (optional overrides in build):
+%   -V title_top=3.0cm -V cover_height=4.0cm -V after_cover_space=1.0cm
+%   or with hyphens: -V title-top=3.0cm -V cover-height=4.0cm -V after-cover-space=1.0cm
+%   Optional: -V cover_width=0.85\textwidth (or cover-width=...)
+\newlength{\CDPMTitleTop}
+\newlength{\CDPMCoverHeight}
+\newlength{\CDPMAfterCoverSpace}
+\newlength{\CDPMCoverWidth}
+\newlength{\CDPMTitleSubtitleSep}
+\newlength{\CDPMTitleMetaGap}
+% Defaults first (always set sane values)
+\setlength{\CDPMTitleTop}{3.0cm}
+% Keep default moderate to avoid huge whitespace in docs ohne Cover
+\setlength{\CDPMCoverHeight}{6.0cm}
+\setlength{\CDPMAfterCoverSpace}{1.0cm}
+\setlength{\CDPMCoverWidth}{\paperwidth}
+\setlength{\CDPMTitleSubtitleSep}{0.4cm}
+\setlength{\CDPMTitleMetaGap}{0.6cm}
+% Optional overrides (underscore variants)
+$if(title_top)$\setlength{\CDPMTitleTop}{$title_top$}$endif$
+$if(cover_height)$\setlength{\CDPMCoverHeight}{$cover_height$}$endif$
+$if(after_cover_space)$\setlength{\CDPMAfterCoverSpace}{$after_cover_space$}$endif$
+$if(cover_width)$\setlength{\CDPMCoverWidth}{$cover_width$}$endif$
+$if(title_subtitle_sep)$\setlength{\CDPMTitleSubtitleSep}{$title_subtitle_sep$}$endif$
+$if(title_metadata_gap)$\setlength{\CDPMTitleMetaGap}{$title_metadata_gap$}$endif$
+% Optional overrides (hyphenated variants)
+$if(title-top)$\setlength{\CDPMTitleTop}{$title-top$}$endif$
+$if(cover-height)$\setlength{\CDPMCoverHeight}{$cover-height$}$endif$
+$if(after-cover-space)$\setlength{\CDPMAfterCoverSpace}{$after-cover-space$}$endif$
+$if(cover-width)$\setlength{\CDPMCoverWidth}{$cover-width$}$endif$
+$if(title-subtitle-sep)$\setlength{\CDPMTitleSubtitleSep}{$title-subtitle-sep$}$endif$
+$if(title-metadata-gap)$\setlength{\CDPMTitleMetaGap}{$title-metadata-gap$}$endif$
+
+% Reserve consistent space from top; include cover image if provided
+\vspace*{\CDPMTitleTop}
+$if(coverimage)$
+  % Full-page-width cover image (beyond text margins), with fixed height box
+  \noindent\hspace*{-\dimexpr\oddsidemargin+\hoffset+1in\relax}% shift to physical left edge
+  \makebox[\paperwidth][c]{\includegraphics[width=\CDPMCoverWidth,height=\CDPMCoverHeight,keepaspectratio]{$coverimage$}}%
+  \vspace{\CDPMAfterCoverSpace}
+$else$
+  % Keep title at the same vertical position even without an image
+  \vspace*{\CDPMCoverHeight}
+  \vspace{\CDPMAfterCoverSpace}
+$endif$
+% --- End unified title header spacing ---
+{\sffamily\Huge\bfseries\color{cdpmblue} $title$\par}
+$if(subtitle)$
+% Consistent title–subtitle spacing
+\vspace{\CDPMTitleSubtitleSep}
+{\sffamily\Large\color{cdpmblue} $subtitle$\par}
+$endif$
+% Push metadata to bottom of title page so all info stays on page 1
+\vspace{0.2cm}
+\vfill
+% Bottom-anchored metadata block
+{\setstretch{1.2}
+  \begin{center}
+  $if(version)$
+  {\sffamily\normalsize\color{cdpmgray} Version $version$\par}
+  $endif$
+  $if(date)$
+  {\sffamily\normalsize\color{cdpmgray} $date$\par}
+  $endif$
+  $if(author)$
+  {\sffamily\large $author$\par}
+  $endif$
+  \end{center}
+}
+\end{titlepage}
 $endif$
 
 $if(toc)$

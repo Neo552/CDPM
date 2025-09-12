@@ -35,10 +35,11 @@ Context → Analysis → Guidance → Updates → Context*
 - [CDPM Glossary](docs/CDPM-Glossar.md) - Term definitions (German)
 - [CDPM Toolkit](docs/CDPM-Toolkit.md) - Practical tools (German)
 
-## Community
+## Community & Contributors
 
 - Website: [contextdrivenpm.org](https://contextdrivenpm.org)
 - Contact: contact@contextdrivenpm.org
+- Authors & Contributors: See [AUTHORS.md](AUTHORS.md)
 
 ## Development
 
@@ -51,7 +52,7 @@ To build the documentation locally, you need:
   brew install pandoc
   ```
 
-- **LaTeX** (for PDF generation):
+- **LaTeX** (for PDF generation with proper fonts):
   ```bash
   # Option 1: BasicTeX (smaller, ~100MB)
   brew install --cask basictex
@@ -64,6 +65,21 @@ After installing LaTeX, restart your terminal or run:
 ```bash
 eval "$(/usr/libexec/path_helper)"
 ```
+
+- **Fonts**: Install Source Sans 3 and Source Serif 4 (used for headings and body text)
+  ```bash
+  brew tap homebrew/cask-fonts
+  brew install --cask font-source-sans-3
+  brew install --cask font-source-serif-4
+  ```
+  And for code blocks (matching Source family):
+  ```bash
+  brew install --cask font-source-code-pro
+  ```
+
+Notes:
+- The LaTeX build uses XeLaTeX/LuaLaTeX to load system fonts via `fontspec`. If only `pdflatex` is available, font loading will fail — install XeLaTeX (via MacTeX/BasicTeX) for best results.
+- If LaTeX engines are unavailable, the build falls back to an HTML→PDF path (`wkhtmltopdf` if installed) with a CSS stylesheet that requests the same fonts from your system. Embedding depends on local font availability.
 
 ### Building Documentation
 
