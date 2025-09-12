@@ -40,9 +40,7 @@ CDPM unterscheidet 4 Bausteine, die einen Kreislauf bilden:
 
 *rollierend, SSOT führt
 
-Projektupdates werden in atomare Destillate zerlegt („ein Update,
-multiple atomare Effekte") und vom Project Owner (PRO) dem Guardian of
-Context validiert und in den Projektkontext gemergt. Stakeholder bleiben
+Projektupdates werden in atomare Destillate zerlegt (ein Update zielt auf eine Komponente des Projektkontextes) und vom Project Owner (PRO), dem Guardian of Context, validiert und in den Projektkontext gemergt. Stakeholder bleiben
 dabei die inhaltlichen Entscheider.
 
 #### **Beispiel**:

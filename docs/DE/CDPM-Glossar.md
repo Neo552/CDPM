@@ -138,8 +138,7 @@ KI-Vorschlag).
 
 **Destillat**
 
-Auf den projektrelevanten Effekt reduziertes Update („ein Update, ein
-Effekt"), inkl. konkreter Auswirkung auf Zeit/Budget/Scope/Ziele.
+Ein Update, das auf eine einzelne Komponente des Projektkontextes abzielt (z.B. eine Anforderung, ein Risiko). Die Auswirkungen auf Zeit, Budget und Scope werden aus dieser Änderung abgeleitet.
 
 *Siehe auch: Update, Commit, Triade.*
 

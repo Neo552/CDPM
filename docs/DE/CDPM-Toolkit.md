@@ -72,8 +72,7 @@ Kreislauf operativ trägt und messbar bessere Entscheidungen ermöglicht.
 - Die Delta-Latenz (Roh-Update → Kontext-Commit) sinkt signifikant;
   Forecast-Stabilität steigt.
 
-- Sponsoren erhalten Entscheidungsvorlagen mit expliziten
-  Zeit/Budget/Scope-Effekten („ein Update, ein Effekt").
+- Stakeholder können über eine KI-Schnittstelle (z.B. Chat) eigenständig „Was-wäre-wenn"-Szenarien durchspielen. Das Ergebnis der Simulation dient als dynamische Entscheidungsgrundlage, ohne den Kontext direkt zu verändern.
 
 - Quick-Wins sind sichtbar: z. B. halbierter Reporting-Aufwand,
   reduzierte Überraschungen am Meilenstein.
@@ -186,19 +185,14 @@ aber auch nicht trivial.
 
 ### Quick-Wins (typisch):
 
-1.  Transparenz in 14 Tagen: Kontext + Rolling-Forecast + Top-10 AIs →
-    belastbarer Status ohne Sonderaufwand.
-
-2.  Risiko-Hotspots sichtbar: Kritischer Pfad/Abhängigkeiten mit
-    Gegenmaßnahmen als AIs.
-
-3.  Scope-Creep eindämmen: Nur Destillate mit ausgewiesenem Effekt
-    gelangen in den Kontext.
-
-4.  Reporting halbiert: Projektionen entstehen als Nebenprodukt.
-
-5.  Bessere Entscheidungen: What-if vor Commit; dokumentierte
-    Trade-offs.
+1.  **Schnelle Transparenz:** In Tagen einen belastbaren Projektstatus etablieren, statt in Wochen.
+2.  **Effizientere Meetings:** Meetings werden von Informationsabgleich zu Entscheidungs-Workshops. Das gemeinsame Lagebild ist bereits vorhanden, die Diskussion startet sofort auf strategischer Ebene.
+3.  **Beschleunigtes Onboarding:** Neue Teammitglieder sind in Stunden statt Wochen produktiv. Der zentrale Kontext bietet ein vollständiges Bild über Ziele, Historie und aktuellen Stand des Projekts.
+4.  **Objektive Priorisierung:** Priorisierung folgt dem Projekt-Impact, nicht der lautesten Meinung. Entscheidungen werden objektiv nachvollziehbar und am Beitrag zum Projektziel ausgerichtet.
+5.  **Gesteigertes Vertrauen der Stakeholder:** Schluss mit dem „Wassermelonen-Reporting" (außen grün, innen rot). Radikale Transparenz und die Möglichkeit zur Selbstauskunft schaffen Vertrauen und reduzieren politische Manöver.
+6.  **Frühwarnsystem für Abhängigkeiten:** Dominoeffekte werden sofort sichtbar. Das System agiert als Frühwarnsystem, indem es die Auswirkungen von Verzögerungen auf den gesamten Projektplan in Echtzeit aufzeigt.
+7.  **Reporting als Nebenprodukt:** Automatisierte Berichte halbieren den manuellen Aufwand.
+8.  **Bessere Entscheidungen:** „Was-wäre-wenn"-Szenarien risikofrei vor dem Commit durchspielen.
 
 ### Messgrößen (Auszug):
 
@@ -214,10 +208,9 @@ aber auch nicht trivial.
 **Gegenmaßnahme:** Tooling minimal halten; jede Änderung muss zuerst im
 Kontext landen, Artefakte sind Projektionen.
 
-### „Alles ins Backlog" ohne Effekt.
+### „Alles ins Backlog" ohne klares Ziel.
 
-**Gegenmaßnahme:** Destillationsregel „ein Update, ein Effekt" durchsetzen;
-ohne Effektausweis kein Commit.
+**Gegenmaßnahme:** Destillationsregel „ein Update, eine Zielkomponente" durchsetzen; ohne klare Zuordnung kein Commit.
 
 ### Verantwortungsdiffusion.
 
