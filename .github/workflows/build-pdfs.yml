@@ -13,22 +13,28 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Install pandoc and LaTeX
       run: |
         sudo apt-get update
         sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-recommended
     
-    - name: Build PDFs
+    - name: Build PDFs (DE and EN)
       run: |
         mkdir -p build
-        pandoc docs/CDPM-Whitepaper.md -o build/CDPM-Whitepaper.pdf --pdf-engine=xelatex --toc
-        pandoc docs/CDPM-Glossar.md -o build/CDPM-Glossar.pdf --pdf-engine=xelatex
-        pandoc docs/CDPM-Toolkit.md -o build/CDPM-Toolkit.pdf --pdf-engine=xelatex
+        # German (DE)
+        pandoc docs/DE/CDPM-Whitepaper.md -o build/CDPM-Whitepaper-DE.pdf --pdf-engine=xelatex --toc
+        pandoc docs/DE/CDPM-Glossar.md    -o build/CDPM-Glossar-DE.pdf    --pdf-engine=xelatex --toc
+        pandoc docs/DE/CDPM-Toolkit.md    -o build/CDPM-Toolkit-DE.pdf    --pdf-engine=xelatex --toc
+
+        # English (EN)
+        pandoc docs/EN/CDPM-Whitepaper.md -o build/CDPM-Whitepaper-EN.pdf --pdf-engine=xelatex --toc
+        pandoc docs/EN/CDPM-Glossary.md   -o build/CDPM-Glossary-EN.pdf   --pdf-engine=xelatex --toc
+        pandoc docs/EN/CDPM-Toolkit.md    -o build/CDPM-Toolkit-EN.pdf    --pdf-engine=xelatex --toc
     
     - name: Upload PDFs as artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: cdpm-pdfs
         path: build/*.pdf

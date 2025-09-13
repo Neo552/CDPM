@@ -85,8 +85,12 @@ build_with_engine() {
 }
 
 # Build CDPM Whitepaper
-echo "- Building CDPM Whitepaper PDF..."
-build_with_engine docs/CDPM-Whitepaper.md build/CDPM-Whitepaper.pdf \
+echo "- Building CDPM PDFs for DE and EN..."
+
+# Build German (DE)
+DOC_LANG=DE
+echo "  · DE: Whitepaper"
+build_with_engine docs/DE/CDPM-Whitepaper.md build/CDPM-Whitepaper-DE.pdf \
   -V docname="CDPM-Whitepaper" \
   -V coverimage="image1.png" \
   -V cover_height=0.35\\paperheight \
@@ -94,12 +98,31 @@ build_with_engine docs/CDPM-Whitepaper.md build/CDPM-Whitepaper.pdf \
   -V after_cover_space=0.5cm \
   -V title_metadata_gap=0.6cm
 
-echo "- Building CDPM Glossar PDF..."
-build_with_engine docs/CDPM-Glossar.md build/CDPM-Glossar.pdf \
+echo "  · DE: Glossar"
+build_with_engine docs/DE/CDPM-Glossar.md build/CDPM-Glossar-DE.pdf \
   -V docname="CDPM-Glossar"
 
-echo "- Building CDPM Toolkit PDF..."
-build_with_engine docs/CDPM-Toolkit.md build/CDPM-Toolkit.pdf \
+echo "  · DE: Toolkit"
+build_with_engine docs/DE/CDPM-Toolkit.md build/CDPM-Toolkit-DE.pdf \
+  -V docname="CDPM-Toolkit"
+
+# Build English (EN)
+DOC_LANG=EN
+echo "  · EN: Whitepaper"
+build_with_engine docs/EN/CDPM-Whitepaper.md build/CDPM-Whitepaper-EN.pdf \
+  -V docname="CDPM-Whitepaper" \
+  -V coverimage="image1.png" \
+  -V cover_height=0.35\\paperheight \
+  -V title_top=2.0cm \
+  -V after_cover_space=0.5cm \
+  -V title_metadata_gap=0.6cm
+
+echo "  · EN: Glossary"
+build_with_engine docs/EN/CDPM-Glossary.md build/CDPM-Glossary-EN.pdf \
+  -V docname="CDPM-Glossary"
+
+echo "  · EN: Toolkit"
+build_with_engine docs/EN/CDPM-Toolkit.md build/CDPM-Toolkit-EN.pdf \
   -V docname="CDPM-Toolkit"
 
 echo "Build complete! PDFs are in the build/ directory."
