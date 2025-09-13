@@ -19,21 +19,27 @@ Context → Analysis → Guidance → Updates → Context*
 - **Living Project Context**: Complete, current project truth with goals, scope, budget, timeline, risks, and action items
 - **AI-Native Design**: Structured data foundation that maximizes AI value in project management
 - **Holistic Project Triad**: Time-Budget-Scope effects visible in every decision
-- **Atomic Destillation**: Complex updates broken down into individually validatable effects
+- **Atomic Distillation**: Complex updates broken down into individually validatable effects
 
 ## Quick Start
 
 1. Create base context (Goals, Scope, Timeline, Budget)
 2. Implement AI connection
 3. Run first analysis
-4. Establish destillation channels
-5. Introduce Daily Destillation Window
+4. Establish distillation channels
+5. Introduce Daily Distillation Window
 
 ## Documentation
 
-- [CDPM Whitepaper](docs/CDPM-Whitepaper.md) - Complete framework description
-- [CDPM Glossary](docs/CDPM-Glossar.md) - Term definitions (German)
-- [CDPM Toolkit](docs/CDPM-Toolkit.md) - Practical tools (German)
+- German (DE)
+  - [CDPM Whitepaper](docs/DE/CDPM-Whitepaper.md) – Vollständige Framework-Beschreibung
+  - [CDPM Glossar](docs/DE/CDPM-Glossar.md) – Begriffe und Konzepte
+  - [CDPM Toolkit](docs/DE/CDPM-Toolkit.md) – Checklisten & Vorlagen
+
+- English (EN)
+  - [CDPM Whitepaper](docs/EN/CDPM-Whitepaper.md) – Complete framework description
+  - [CDPM Glossary](docs/EN/CDPM-Glossary.md) – Term definitions
+  - [CDPM Toolkit](docs/EN/CDPM-Toolkit.md) – Checklists & templates
 
 ## Community & Contributors
 

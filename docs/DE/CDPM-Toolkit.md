@@ -47,6 +47,78 @@ toc: true
 }
 ```
 
+## Kontext-JSON (Kernstruktur)
+
+Die folgende JSON-Vorlage enthält nur die Core-Kontextfelder und Action Items.
+
+```json
+{
+  "id": "proj-123",
+  "name": "Beispielprojekt",
+  "fileName": "project.json",
+  "folderName": "beispielprojekt",
+  "categories": [
+    { "id": "cat-1", "name": "Backlog", "parentId": null, "collapsed": false }
+  ],
+  "actionItems": [
+    {
+      "id": 1,
+      "text": "MVP-Scope definieren",
+      "description": "Akzeptanzkriterien: MVP-Feature-Set funktionsfähig, Tests bestanden, Abnahme durch Stakeholder.",
+      "status": "open",
+      "priority": 70,
+      "impact": "high",
+      "complexity": "moderate",
+      "urgency": "medium",
+      "responsible": "user-1",
+      "startDate": "2025-09-01",
+      "dueDate": "2025-09-30",
+      "planBudget": { "value": 0, "currency": "EUR" },
+      "isBudget": { "value": 0, "currency": "EUR" },
+      "planEffort": { "value": 8, "unit": "hours" },
+      "isEffort": { "value": 0, "unit": "hours" },
+      "dependencies": []
+    }
+  ],
+  "projectDescription": "Kurzbeschreibung des Projekts ...",
+  "projectGoal": "Übergeordnetes Ziel ...",
+  "projectScope": "Abgrenzung des Scopes ...",
+  "successCriteria": [
+    { "id": "crit-1", "content": "MVP-Feature-Set abgenommen" }
+  ],
+  "timeframe": { "start": "2025-09-01", "end": "2025-12-31" },
+  "budget": { "amount": 100000, "currency": "EUR" },
+  "mainRequirements": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "Anforderung A" } ] }
+    ]
+  },
+  "technologiesMethods": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "Tech A" } ] }
+    ]
+  },
+  "milestones": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "M1: MVP" } ] }
+    ]
+  },
+  "dependencies": "Abhängigkeit: Lieferant-API",
+  "risks": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "Risiko A" } ] }
+    ]
+  },
+  "projectStatus": "on_track"
+}
+```
+
+Hinweise:
+- Priority: Ganzzahl 1–100 (1 = niedrigste Priorität, 100 = höchste)
+- Impact: minimal | low | medium | high | critical
+- Complexity: very simple | simple | moderate | complex | very complex
+- Urgency: very low | low | medium | high | overdue
+
 # Einführung & Pilotprojekte
 
 Dieses Kapitel beschreibt, wie Context Driven Project Management (CDPM)

@@ -30,6 +30,14 @@ VERSION=${VERSION:-v1.0}
 DOC_LANG=${DOC_LANG:-DE}  # Changed from LANG to DOC_LANG to avoid conflict
 DOC_DATE=${DOC_DATE:-$(date +%Y-%m-%d)}
 
+# Ensure exact fonts are present (optional; skipped if curl missing)
+if command -v curl &> /dev/null; then
+  echo "Fetching precise CDPM fonts (if missing)..."
+  bash ./scripts/fetch-fonts.sh || echo "Font fetch skipped/failed; using system fonts if available."
+else
+  echo "curl not found; skipping font fetch. Assuming fonts exist in static/fonts or system."
+fi
+
 build_with_engine() {
   local input_md=$1
   local output_pdf=$2

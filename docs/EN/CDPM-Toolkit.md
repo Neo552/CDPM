@@ -47,6 +47,78 @@ toc: true
 }
 ```
 
+## Context JSON (core structure)
+
+The following JSON template contains only the core context fields and action items.
+
+```json
+{
+  "id": "proj-123",
+  "name": "Example Project",
+  "fileName": "project.json",
+  "folderName": "example-project",
+  "categories": [
+    { "id": "cat-1", "name": "Backlog", "parentId": null, "collapsed": false }
+  ],
+  "actionItems": [
+    {
+      "id": 1,
+      "text": "Define MVP scope",
+      "description": "Acceptance criteria: MVP feature set functional, tests passed, stakeholder sign-off.",
+      "status": "open",
+      "priority": 70,
+      "impact": "high",
+      "complexity": "moderate",
+      "urgency": "medium",
+      "responsible": "user-1",
+      "startDate": "2025-09-01",
+      "dueDate": "2025-09-30",
+      "planBudget": { "value": 0, "currency": "EUR" },
+      "isBudget": { "value": 0, "currency": "EUR" },
+      "planEffort": { "value": 8, "unit": "hours" },
+      "isEffort": { "value": 0, "unit": "hours" },
+      "dependencies": []
+    }
+  ],
+  "projectDescription": "Short project description ...",
+  "projectGoal": "Top-level goal ...",
+  "projectScope": "Scope boundaries ...",
+  "successCriteria": [
+    { "id": "crit-1", "content": "MVP feature set accepted" }
+  ],
+  "timeframe": { "start": "2025-09-01", "end": "2025-12-31" },
+  "budget": { "amount": 100000, "currency": "EUR" },
+  "mainRequirements": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "Requirement A" } ] }
+    ]
+  },
+  "technologiesMethods": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "Tech A" } ] }
+    ]
+  },
+  "milestones": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "M1: MVP" } ] }
+    ]
+  },
+  "dependencies": "Dependency: Supplier API",
+  "risks": {
+    "rows": [
+      { "id": "row-1", "cells": [ { "id": "cell-1", "content": "Risk A" } ] }
+    ]
+  },
+  "projectStatus": "on_track"
+}
+```
+
+Notes:
+- Priority: integer 1–100 (1 = lowest priority, 100 = highest)
+- Impact: minimal | low | medium | high | critical
+- Complexity: very simple | simple | moderate | complex | very complex
+- Urgency: very low | low | medium | high | overdue
+
 # Introduction & Pilot Projects
 
 This chapter describes how Context Driven Project Management (CDPM) is pragmatically introduced and validated in a pilot project. The goal is quick, measurable value without big-bang transformation. CDPM supplements existing work methods and makes them context-capable, versionable, and AI-usable.

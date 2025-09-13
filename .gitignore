@@ -8,8 +8,12 @@ Thumbs.db
 
 # Original documents (removed - we use Markdown as source)
 
-# Build directory - PDFs are kept in version control
-# build/
+# Build artifacts (generated PDFs, not in version control)
+build/
+build/**/*.pdf
+
+# Optional: ignore any stray PDFs at repo root (comment out if you keep samples)
+# *.pdf
 
 # Temp files
 *.tmp

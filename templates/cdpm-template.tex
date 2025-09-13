@@ -8,7 +8,11 @@
 \usepackage{fontspec}
 \usepackage{geometry}
 \usepackage{microtype}
-\usepackage[ngerman]{babel}
+% Language handling: load both and select based on Pandoc var `lang` (DE/EN)
+\usepackage[english,ngerman]{babel}
+\usepackage{etoolbox}
+% Default to German; switch to English if requested
+\ifdefstring{$lang$}{EN}{\selectlanguage{english}}{\selectlanguage{ngerman}}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{setspace}
@@ -37,56 +41,92 @@
 % Language (hyphenation/spacing)
 % handled by babel (ngerman)
 
-% Font settings - Source family with explicit variable font mapping (ensures bold/italic)
-% Many systems install Google variable fonts (wght/opsz[/ital]). We explicitly map series/shape
-% so that \bfseries and \itshape pick true weights instead of falling back to Regular.
-\IfFontExistsTF{Source Serif 4}{%
-  \setmainfont{Source Serif 4}[
+% Font settings with preference for repo-bundled fonts in static/fonts/
+% We first try local variable TTFs; if absent, fall back to system fonts.
+\newif\ifCDPMLocalFonts
+\IfFileExists{static/fonts/SourceSerif4[wght].ttf}{\CDPMLocalFontstrue}{\CDPMLocalFontsfalse}
+
+\ifCDPMLocalFonts
+  % Use exact, repo-bundled fonts (variable TTFs)
+  \setmainfont{SourceSerif4[wght].ttf}[
+    Path=static/fonts/,
     Ligatures=TeX,
     UprightFeatures      = {RawFeature={+wght=400}},
     BoldFeatures         = {RawFeature={+wght=700}},
-    ItalicFont           = {Source Serif 4},
+    ItalicFont           = {SourceSerif4-Italic[wght].ttf},
     ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
-    BoldItalicFont       = {Source Serif 4},
+    BoldItalicFont       = {SourceSerif4-Italic[wght].ttf},
     BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
   ]
-}{%
-  % Static fallback family
-  \IfFontExistsTF{Source Serif Pro}{\setmainfont{Source Serif Pro}[Ligatures=TeX]}{% 
-    \PackageError{cdpm-template}{Required serif font not found}{Install 'Source Serif 4' (or 'Source Serif Pro') and rebuild.}%
-  }
-}
-
-\IfFontExistsTF{Source Sans 3}{%
-  \setsansfont{Source Sans 3}[
+  \setsansfont{SourceSans3[wght].ttf}[
+    Path=static/fonts/,
     Ligatures=TeX,
     UprightFeatures      = {RawFeature={+wght=400}},
     BoldFeatures         = {RawFeature={+wght=700}},
-    ItalicFont           = {Source Sans 3},
+    ItalicFont           = {SourceSans3-Italic[wght].ttf},
     ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
-    BoldItalicFont       = {Source Sans 3},
+    BoldItalicFont       = {SourceSans3-Italic[wght].ttf},
     BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
   ]
-}{%
-  \IfFontExistsTF{Source Sans Pro}{\setsansfont{Source Sans Pro}[Ligatures=TeX]}{% 
-    \PackageError{cdpm-template}{Required sans-serif font not found}{Install 'Source Sans 3' (or 'Source Sans Pro') and rebuild.}%
-  }
-}
-
-% Mono font – Source Code Pro variable mapping
-\IfFontExistsTF{Source Code Pro}{%
-  \setmonofont{Source Code Pro}[
+  \setmonofont{SourceCodePro[wght].ttf}[
+    Path=static/fonts/,
     Scale=0.9,
     UprightFeatures    = {RawFeature={+wght=400}},
     BoldFeatures       = {RawFeature={+wght=700}},
-    ItalicFont         = {Source Code Pro},
+    ItalicFont         = {SourceCodePro-Italic[wght].ttf},
     ItalicFeatures     = {RawFeature={+ital=1,+wght=400}},
-    BoldItalicFont     = {Source Code Pro},
+    BoldItalicFont     = {SourceCodePro-Italic[wght].ttf},
     BoldItalicFeatures = {RawFeature={+ital=1,+wght=700}}
   ]
-}{%
-  \PackageError{cdpm-template}{Required mono font not found}{Install 'Source Code Pro' and rebuild.}%
-}
+\else
+  % Fallback to system-installed families (preferring 4/3, then Pro)
+  % Serif
+  \IfFontExistsTF{Source Serif 4}{%
+    \setmainfont{Source Serif 4}[
+      Ligatures=TeX,
+      UprightFeatures      = {RawFeature={+wght=400}},
+      BoldFeatures         = {RawFeature={+wght=700}},
+      ItalicFont           = {Source Serif 4},
+      ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
+      BoldItalicFont       = {Source Serif 4},
+      BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
+    ]
+  }{%
+    \IfFontExistsTF{Source Serif Pro}{\setmainfont{Source Serif Pro}[Ligatures=TeX]}{% 
+      \PackageError{cdpm-template}{Required serif font not found}{Install 'Source Serif 4' (or 'Source Serif Pro') and rebuild.}%
+    }
+  }
+  % Sans
+  \IfFontExistsTF{Source Sans 3}{%
+    \setsansfont{Source Sans 3}[
+      Ligatures=TeX,
+      UprightFeatures      = {RawFeature={+wght=400}},
+      BoldFeatures         = {RawFeature={+wght=700}},
+      ItalicFont           = {Source Sans 3},
+      ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
+      BoldItalicFont       = {Source Sans 3},
+      BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
+    ]
+  }{%
+    \IfFontExistsTF{Source Sans Pro}{\setsansfont{Source Sans Pro}[Ligatures=TeX]}{% 
+      \PackageError{cdpm-template}{Required sans-serif font not found}{Install 'Source Sans 3' (or 'Source Sans Pro') and rebuild.}%
+    }
+  }
+  % Mono
+  \IfFontExistsTF{Source Code Pro}{%
+    \setmonofont{Source Code Pro}[
+      Scale=0.9,
+      UprightFeatures    = {RawFeature={+wght=400}},
+      BoldFeatures       = {RawFeature={+wght=700}},
+      ItalicFont         = {Source Code Pro},
+      ItalicFeatures     = {RawFeature={+ital=1,+wght=400}},
+      BoldItalicFont     = {Source Code Pro},
+      BoldItalicFeatures = {RawFeature={+ital=1,+wght=700}}
+    ]
+  }{%
+    \PackageError{cdpm-template}{Required mono font not found}{Install 'Source Code Pro' and rebuild.}%
+  }
+\fi
 
 % Line spacing (configurable via Pandoc var: linestretch)
 $if(linestretch)$
@@ -196,8 +236,16 @@ $endif$
 
 % Code blocks
 \usepackage{fancyvrb}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{fontsize=\small}
-\newenvironment{Shaded}{}{}
+% Pandoc highlighting macros (colors for tokens)
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+% Allow token macros to work inside the Highlighting verbatim environment.
+% Guard against redefinitions if Pandoc already defined these.
+\makeatletter
+\@ifundefined{Highlighting}{\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}}{}
+\@ifundefined{Shaded}{\newenvironment{Shaded}{}{} }{}
+\makeatother
 
 % Captions
 \usepackage[labelfont=bf,font=small]{caption}

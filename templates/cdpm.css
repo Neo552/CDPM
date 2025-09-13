@@ -1,15 +1,58 @@
 /* CDPM PDF CSS fallback for HTML engines (wkhtmltopdf) */
+/* Prefer repo-bundled variable fonts for byte-exact consistency */
+@font-face {
+  font-family: 'CDPM Serif';
+  src: url('../static/fonts/SourceSerif4[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CDPM Serif';
+  src: url('../static/fonts/SourceSerif4-Italic[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CDPM Sans';
+  src: url('../static/fonts/SourceSans3[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CDPM Sans';
+  src: url('../static/fonts/SourceSans3-Italic[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CDPM Mono';
+  src: url('../static/fonts/SourceCodePro[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CDPM Mono';
+  src: url('../static/fonts/SourceCodePro-Italic[wght].ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* Page margins (wkhtmltopdf honors these when passed via -V margin-*) */
 html, body {
-  font-family: "Source Serif 4", "Source Serif Pro", "Source Serif Variable", Georgia, serif;
+  font-family: 'CDPM Serif', "Source Serif 4", "Source Serif Pro", Georgia, serif;
   font-size: 11pt;
   line-height: 1.4; /* adjust to 1.5 if preferred */
   color: #111;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Source Sans 3", "Source Sans Pro", "Source Sans Variable", Arial, Helvetica, sans-serif;
+  font-family: 'CDPM Sans', "Source Sans 3", "Source Sans Pro", Arial, Helvetica, sans-serif;
   font-weight: 700;
   color: #0054A4; /* cdpm blue */
   margin-top: 1.2em;
@@ -40,7 +83,7 @@ img { max-width: 100%; }
 
 /* Title block (Pandoc HTML output) */
 .title, .author, .date {
-  font-family: "Source Sans 3", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: 'CDPM Sans', "Source Sans 3", "Source Sans Pro", Arial, Helvetica, sans-serif;
   text-align: center;
 }
 .title { font-size: 2em; font-weight: 800; margin-top: 1em; }
@@ -48,5 +91,5 @@ img { max-width: 100%; }
 
 /* TOC styling */
 #TOC, nav#TOC, .toc {
-  font-family: "Source Sans 3", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: 'CDPM Sans', "Source Sans 3", "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
