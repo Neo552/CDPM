@@ -44,38 +44,40 @@
 % Font settings with preference for repo-bundled fonts in static/fonts/
 % We first try local variable TTFs; if absent, fall back to system fonts.
 \newif\ifCDPMLocalFonts
-\IfFileExists{static/fonts/SourceSerif4[wght].ttf}{\CDPMLocalFontstrue}{\CDPMLocalFontsfalse}
+% Check for font directory existence (brackets in filename can cause issues)
+\IfFileExists{static/fonts/OFL.txt}{\CDPMLocalFontstrue}{\CDPMLocalFontsfalse}
 
 \ifCDPMLocalFonts
   % Use exact, repo-bundled fonts (variable TTFs)
-  \setmainfont{SourceSerif4[wght].ttf}[
+  % Using bracket-free filenames for CI compatibility
+  \setmainfont{SourceSerif4opsz,wght.ttf}[
     Path=static/fonts/,
     Ligatures=TeX,
     UprightFeatures      = {RawFeature={+wght=400}},
     BoldFeatures         = {RawFeature={+wght=700}},
-    ItalicFont           = {SourceSerif4-Italic[wght].ttf},
+    ItalicFont           = {SourceSerif4-Italicopsz,wght.ttf},
     ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
-    BoldItalicFont       = {SourceSerif4-Italic[wght].ttf},
+    BoldItalicFont       = {SourceSerif4-Italicopsz,wght.ttf},
     BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
   ]
-  \setsansfont{SourceSans3[wght].ttf}[
+  \setsansfont{SourceSans3wght.ttf}[
     Path=static/fonts/,
     Ligatures=TeX,
     UprightFeatures      = {RawFeature={+wght=400}},
     BoldFeatures         = {RawFeature={+wght=700}},
-    ItalicFont           = {SourceSans3-Italic[wght].ttf},
+    ItalicFont           = {SourceSans3-Italicwght.ttf},
     ItalicFeatures       = {RawFeature={+ital=1,+wght=400}},
-    BoldItalicFont       = {SourceSans3-Italic[wght].ttf},
+    BoldItalicFont       = {SourceSans3-Italicwght.ttf},
     BoldItalicFeatures   = {RawFeature={+ital=1,+wght=700}}
   ]
-  \setmonofont{SourceCodePro[wght].ttf}[
+  \setmonofont{SourceCodeProwght.ttf}[
     Path=static/fonts/,
     Scale=0.9,
     UprightFeatures    = {RawFeature={+wght=400}},
     BoldFeatures       = {RawFeature={+wght=700}},
-    ItalicFont         = {SourceCodePro-Italic[wght].ttf},
+    ItalicFont         = {SourceCodePro-Italicwght.ttf},
     ItalicFeatures     = {RawFeature={+ital=1,+wght=400}},
-    BoldItalicFont     = {SourceCodePro-Italic[wght].ttf},
+    BoldItalicFont     = {SourceCodePro-Italicwght.ttf},
     BoldItalicFeatures = {RawFeature={+ital=1,+wght=700}}
   ]
 \else
