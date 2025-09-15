@@ -18,14 +18,29 @@ jobs:
     - name: Install pandoc and LaTeX
       run: |
         sudo apt-get update
+        # Try to install with German language support, but don't fail if unavailable
         sudo apt-get install -y pandoc texlive-xetex texlive-luatex texlive-fonts-recommended texlive-latex-recommended
+        sudo apt-get install -y texlive-lang-german || echo "texlive-lang-german not available, will download manually"
 
     - name: Fetch exact CDPM fonts
       run: |
         bash ./scripts/fetch-fonts.sh
+
+    - name: Ensure German babel support
+      run: |
+        # Download German babel files if not installed via package
+        if ! kpsewhich ngerman.ldf >/dev/null 2>&1; then
+          echo "Downloading German babel support manually..."
+          bash ./scripts/fetch-babel-german.sh
+          export TEXMFHOME="$PWD/texmf-local"
+        fi
     
     - name: Build PDFs (DE and EN) with unified template
       run: |
+        # Export TEXMFHOME if we downloaded babel manually
+        if [ -d "texmf-local" ]; then
+          export TEXMFHOME="$PWD/texmf-local"
+        fi
         bash ./build.sh
     
     - name: Upload PDFs as artifacts
