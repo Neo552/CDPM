@@ -26,7 +26,8 @@ echo "Using PDF engine: $PDF_ENGINE"
 
 # Document meta defaults
 LINE_SPACING=${LINE_SPACING:-1.4}  # 1.4 by default
-VERSION=${VERSION:-v1.0}
+# Get version from Git tags, fallback to v1.0 if no tags
+VERSION=${VERSION:-$(git describe --tags --always --dirty 2>/dev/null || echo "v1.0")}
 DOC_LANG=${DOC_LANG:-DE}  # Changed from LANG to DOC_LANG to avoid conflict
 DOC_DATE=${DOC_DATE:-$(date +%Y-%m-%d)}
 

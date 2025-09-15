@@ -19,6 +19,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch all history for git describe to work
     
     - name: Install pandoc and LaTeX
       run: |
