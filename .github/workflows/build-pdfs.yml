@@ -10,10 +10,13 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: write  # Needed for creating releases
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
     
