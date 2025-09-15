@@ -25,6 +25,13 @@ download() {
 # Try multiple candidate URLs and save to canonical output name
 download_try() {
   local out="$1"; shift
+
+  # Skip if file already exists
+  if [ -f "$out" ]; then
+    echo "Already present: $(basename "$out")"
+    return 0
+  fi
+
   local tmp
   tmp="${out}.part"
   for url in "$@"; do
@@ -42,32 +49,26 @@ download_try() {
   return 1
 }
 
-# Google Fonts raw URLs
+# Google Fonts raw URLs - files exist with brackets in filenames
 # Source Serif 4 (upright + italic) - has opsz and wght axes
 download_try "$FONT_DIR/SourceSerif4[opsz,wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4[opsz,wght].ttf"
+  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4%5Bopsz%2Cwght%5D.ttf"
 
 download_try "$FONT_DIR/SourceSerif4-Italic[opsz,wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-Italic[opsz,wght].ttf"
+  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-Italic%5Bopsz%2Cwght%5D.ttf"
 
 # Source Sans 3 (upright + italic)
 download_try "$FONT_DIR/SourceSans3[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-VariableFont_wght.ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-VariableFont_wdth,wght.ttf"
+  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3%5Bwght%5D.ttf"
 
 download_try "$FONT_DIR/SourceSans3-Italic[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-Italic[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-Italic-VariableFont_wght.ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-Italic-VariableFont_wdth,wght.ttf"
+  "https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-Italic%5Bwght%5D.ttf"
 
 # Source Code Pro (upright + italic)
 download_try "$FONT_DIR/SourceCodePro[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcecodepro/SourceCodePro[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcecodepro/SourceCodePro-VariableFont_wght.ttf"
+  "https://github.com/google/fonts/raw/main/ofl/sourcecodepro/SourceCodePro%5Bwght%5D.ttf"
 
 download_try "$FONT_DIR/SourceCodePro-Italic[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcecodepro/SourceCodePro-Italic[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourcecodepro/SourceCodePro-Italic-VariableFont_wght.ttf"
+  "https://github.com/google/fonts/raw/main/ofl/sourcecodepro/SourceCodePro-Italic%5Bwght%5D.ttf"
 
 echo "Fonts are ready in: $FONT_DIR"
