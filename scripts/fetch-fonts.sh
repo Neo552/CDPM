@@ -43,16 +43,12 @@ download_try() {
 }
 
 # Google Fonts raw URLs
-# Source Serif 4 (upright + italic)
-download_try "$FONT_DIR/SourceSerif4[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-VariableFont_opsz,wght.ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-VariableFont_wght.ttf"
+# Source Serif 4 (upright + italic) - has opsz and wght axes
+download_try "$FONT_DIR/SourceSerif4[opsz,wght].ttf" \
+  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4[opsz,wght].ttf"
 
-download_try "$FONT_DIR/SourceSerif4-Italic[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-Italic[wght].ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-Italic-VariableFont_opsz,wght.ttf" \
-  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-Italic-VariableFont_wght.ttf"
+download_try "$FONT_DIR/SourceSerif4-Italic[opsz,wght].ttf" \
+  "https://github.com/google/fonts/raw/main/ofl/sourceserif4/SourceSerif4-Italic[opsz,wght].ttf"
 
 # Source Sans 3 (upright + italic)
 download_try "$FONT_DIR/SourceSans3[wght].ttf" \

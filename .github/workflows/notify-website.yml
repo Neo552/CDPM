@@ -1,0 +1,52 @@
+name: Notify Website of PDF Updates
+
+on:
+  push:
+    paths:
+      - 'build/**.pdf'
+      - 'docs/**'
+      - 'build.sh'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+        default: 'Manual PDF update'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    name: Trigger Website PDF Sync
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List PDF files
+        run: |
+          echo "PDF files in repository:"
+          find build -name "*.pdf" -type f -exec ls -lh {} \; 2>/dev/null || echo "No PDFs found in build/"
+
+      - name: Trigger website update
+        if: success()
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.WEBSITE_REPO_TOKEN }}
+          repository: Neo552/CDPM-Website
+          event-type: pdfs-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "message": "${{ github.event.head_commit.message || inputs.reason }}"}'
+
+      - name: Create summary
+        run: |
+          echo "## PDF Update Notification Sent" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The CDPM Website has been notified about PDF updates." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Details:" >> $GITHUB_STEP_SUMMARY
+          echo "- Commit: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Message: ${{ github.event.head_commit.message || inputs.reason }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Triggered by: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Check the [CDPM-Website Actions](https://github.com/Neo552/CDPM-Website/actions) for sync status" >> $GITHUB_STEP_SUMMARY
+          echo "2. Verify PDFs at [contextdrivenpm.org/downloads](https://contextdrivenpm.org/downloads/)" >> $GITHUB_STEP_SUMMARY
