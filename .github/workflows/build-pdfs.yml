@@ -39,16 +39,8 @@ jobs:
         name: cdpm-pdfs
         path: build/*.pdf
     
-    - name: Create Release and Upload PDFs
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: softprops/action-gh-release@v1
-      with:
-        files: build/*.pdf
-        generate_release_notes: true
-        draft: false
-        prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # Note: Automatic release creation disabled due to token limitations
+    # PDFs are available as artifacts and can be manually added to releases
 
     - name: Upload PDFs to existing Release
       if: github.event_name == 'release'

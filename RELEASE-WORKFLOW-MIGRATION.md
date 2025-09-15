@@ -44,6 +44,8 @@ on:
 
 ### Workflow für neue Releases
 
+**Hinweis:** Aufgrund von Token-Beschränkungen erfolgt die Release-Erstellung halbautomatisch.
+
 1. **Code committen:**
    ```bash
    git add .
@@ -59,8 +61,15 @@ on:
 
 3. **Automatisches Ergebnis:**
    - GitHub Actions baut alle PDFs
-   - Release wird automatisch erstellt und veröffentlicht
-   - PDFs werden als Release Assets angehängt
+   - PDFs werden als Workflow-Artifacts gespeichert
+
+4. **Manueller Schritt:**
+   - Release auf GitHub erstellen (über Web-Interface)
+   - PDFs von den Workflow-Artifacts herunterladen
+   - Als Release-Assets anhängen
+
+   **ODER** bei existierendem Release:
+   - Wenn das Release bereits existiert, werden PDFs automatisch angehängt
 
 ### Verfügbare PDF-Links
 
