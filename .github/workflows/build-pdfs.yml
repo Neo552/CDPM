@@ -36,7 +36,7 @@ jobs:
         bash ./build.sh
     
     - name: Upload PDFs as artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: cdpm-pdfs
         path: build/*.pdf
