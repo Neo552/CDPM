@@ -2,6 +2,7 @@
 title: "Context-Driven Project Management"
 subtitle: "Projekte kontextzentriert mit KI transformieren"
 description: "Ein methodenagnostisches Meta-Framework für holistische, KI-fähige Projektsteuerung"
+version: "1.1.0"
 toc: true
 ---
 
@@ -206,6 +207,46 @@ Ein zukunftsfähiges Projekt Management Framework braucht:
 Diese Prinzipien bereiten den Boden für **Context Driven Project
 Management (CDPM)** ein modernes Meta-Framework, das klassische
 Planbarkeit mit agiler Adaptivität verbindet.
+
+# Wissenschaftliche Grundlagen
+
+Aktuelle Forschung (2025-2026) bestätigt die oben beschriebenen Herausforderungen und unterstreicht sowohl das transformative Potenzial als auch die Voraussetzungen für KI im Projektmanagement. Dieses Kapitel fasst zentrale Erkenntnisse zusammen und ordnet sie in die CDPM-Prinzipien ein.
+
+## KI als Katalysator im Projektmanagement
+
+Die Verbreitung von KI im Projektmanagement beschleunigt sich rasant. Eine Analyse von 35 Fallstudien ergab, dass KI die Effizienz um 15-40 % verbesserte, Kosten um 20-30 % senkte und die Risikoidentifikation um 25-50 % erhöhte[^1]. Ein umfassender Review prognostiziert, dass bis 2030 etwa 80 % der PM-Aufgaben automatisiert werden könnten[^2], während über 55 % der Software-Käufer KI-Fähigkeiten als Hauptgrund für die Anschaffung neuer PM-Tools nennen[^3].
+
+Diese Fortschritte verschieben die Rolle des Projektmanagers vom taktischen Controlling hin zur strategischen Orchestrierung[^1] -- eine Verschiebung, die CDPM durch sein kontextzentriertes Modell von Grund auf unterstützt.
+
+## Datenqualität als Fundament
+
+Die Wirksamkeit von KI hängt maßgeblich von der Datenqualität ab. In 68 % der untersuchten Fälle waren Datenprobleme die größte Implementierungsherausforderung[^1]. Organisationen kämpfen mit fragmentierten Daten über verschiedene Systeme, inkonsistenten Strukturen, fehlenden historischen Informationen und schwacher Daten-Governance[^1]. Unternehmen, die vor der KI-Einführung in systematische Datenvorbereitung investierten, berichteten eine 2,7-fach höhere Zufriedenheit[^1].
+
+Die versteckten Kosten sind erheblich: Datenvorbereitung allein macht 30-40 % der Implementierungskosten aus, bei Gesamt-Investitionen von 300.000-500.000 USD im Enterprise-Bereich[^5]. Branchenexperten betonen, dass KI ohne gemeinsame Sprache und einheitliche Intake-Prozesse lediglich Unordnung automatisiert[^6]. Eine praktische Empfehlung sticht durchgehend hervor: Projektinformationen in einem einzigen System konsolidieren, da verstreute Tabellenblätter die KI-Genauigkeit und den ROI zerstören[^4].
+
+CDPM adressiert dies direkt: Der Projektkontext dient als strukturierte, semantisch verknüpfte Single Source of Truth -- genau das Datenfundament, das die Forschung als essenziell identifiziert.
+
+## Das Stale-Data-Problem
+
+Stale Data -- Informationen, die veraltet sind und nicht mehr gepflegt werden[^7] -- ist ein allgegenwärtiges Problem im Projektmanagement. Wenn Daten veralten, hören Teams auf zu aktualisieren, und Führungskräfte verlieren das Vertrauen[^6]. Das Werkzeug wird zum "Dashboard der Verzweiflung"[^6].
+
+Die Folgen sind gut dokumentiert: Statische Baupläne veralten innerhalb von 48 Stunden und untergraben das Vertrauen der Beteiligten[^8]. Tabellenbasierte Budgets und Zeiterfassung über mehrere Systeme hinweg bedeuten, dass Budgetüberschreitungen zu spät erkannt werden[^9]. Traditionelle Data-Warehouse-Architekturen mit Batch-Pipelines verursachen Multi-Hop-Verzögerungen und liefern KI-Systemen veraltete Snapshots[^10]. Ein KI-Copilot auf veralteten Daten ist lediglich ein "Textgenerator auf Stale Data"[^6].
+
+Die Forschung empfiehlt Echtzeit-Daten-Streaming zur Eliminierung von Batch-Latenzen[^10], Konnektor-Ökosysteme mit ereignisgesteuerter Orchestrierung, damit Signale live bleiben[^6], sowie vierteljährliche "Data-Hygiene-Sprints"[^4].
+
+## Implikationen für CDPM
+
+Die Forschung validiert CDPMs zentrale Designentscheidungen:
+
+- **Lebendiger Kontext als Single Source of Truth**: Die Forschung empfiehlt durchgehend, Projektdaten in einem einheitlichen System zu konsolidieren[^4][^6]. CDPMs Projektkontext erfüllt diese Anforderung by Design.
+
+- **Kontinuierliche Destillation gegen Stale Data**: Wo statische Pläne innerhalb von Tagen veralten[^8], stellt CDPMs Destillationskreislauf sicher, dass Änderungen sofort in den Kontext fließen.
+
+- **KI als Katalysator, Mensch in Verantwortung**: Erfolgreiche Implementierungen nutzen KI zur Unterstützung, nicht als Ersatz[^5]. CDPMs PRO-Rolle (Guardian of Context) bewahrt die menschliche Verantwortung und maximiert gleichzeitig den analytischen und beratenden Wert der KI.
+
+- **Strukturierte Daten ermöglichen KI-Wirksamkeit**: Die 2,7-fache Zufriedenheitsverbesserung durch systematische Datenvorbereitung[^1] unterstützt direkt CDPMs "Context First"-Prinzip.
+
+- **Integration statt Isolation**: Die Erkenntnis, dass KI ohne Integration lediglich ein "Textgenerator auf Stale Data" ist[^6], validiert CDPMs konnektorbasierte Architektur und ereignisgesteuerte Update-Aufnahme.
 
 # CDPM: Paradigmenwechsel und Framework
 
@@ -655,3 +696,25 @@ Piloten und klarer Skalierbarkeit ins Portfolio. Der Weg beginnt mit
 einem ersten, sauberen Kontext und der Disziplin, Updates in atomare
 Destillate zu zerlegen. Der Rest ist konsequente Anwendung -- und führt
 von Komplexität zu Klarheit mit Wirkung.
+
+# Referenzen {.unnumbered}
+
+[^1]: Battula, V.R. & Krishnayallamandala, S. (2025). The Role of Artificial Intelligence in Modern Project Management: Trends and Implications for 2025. *International Journal of Engineering, Science, Technology and Innovation (IJESTI)*. https://www.researchgate.net/publication/395385546
+
+[^2]: Mogbojuri, O.S., Oyeniran, O.C., Adebayo, R.A. & Adeleke, G.S. (2025). Artificial Intelligence in Project Management -- Challenges, Strategies and Best Practices. *F1000Research*, 14:1357. https://f1000research.com/articles/14-1357
+
+[^3]: Capterra (2025). AI & Security Are Top Concerns in Capterra's 2025 Project Management Software Trends Survey. https://www.capterra.com/resources/2025-pm-software-trends/
+
+[^4]: Yuen, K. (2025). Future of Project Management With AI: 2025 & Beyond. *Monograph*. https://monograph.com/blog/ai-future-project-management-2025-guide
+
+[^5]: Bara, M. (2025). The Hidden Economics of AI in Project Management: Why Real Costs Are 3-5x Higher Than You Think. *Medium*. https://medium.com/@marc.bara.iniesta/the-hidden-economics-of-ai-in-project-management-why-real-costs-are-3-5x-higher-than-you-think-4a6b2901a9ca
+
+[^6]: APMIC (2025). Future of Project Management Software Trends 2030. https://apmic.org/blogs/future-of-project-management-software-ai-automation-amp-cloud-integration-predictions-20252030
+
+[^7]: DQOps (2025). What is Stale Data? Definition, Examples, and Best Practices. https://dqops.com/stale-data-definition-examples/
+
+[^8]: TeamGantt (2025). 3 Problems That Drain Construction Project Budgets. https://www.teamgantt.com/blog/construction-project-problems
+
+[^9]: LinkedIn (2025). Agency Operations in 2026: The Death of the Spreadsheet CFO. https://www.linkedin.com/pulse/agency-operations-2026-death-spreadsheet-cfo-skills-workflow-u9vec
+
+[^10]: Confluent (2025). Your GenAI Project Needs a Data Streaming Platform. https://www.confluent.io/blog/your-ai-project-has-a-data-liberation-problem/
