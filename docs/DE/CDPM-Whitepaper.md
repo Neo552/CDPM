@@ -2,7 +2,7 @@
 title: "Context-Driven Project Management"
 subtitle: "Projekte kontextzentriert mit KI transformieren"
 description: "Ein methodenagnostisches Meta-Framework für holistische, KI-fähige Projektsteuerung"
-version: "1.1.0"
+version: "1.2.0"
 toc: true
 ---
 
@@ -23,13 +23,12 @@ aktuelle Datenbasis.
 ## Die CDPM-Lösung {.unnumbered}
 
 CDPM ist ein methodenagnostisches Meta-Framework, das Projekte
-holistisch KI-ready macht und ersetzt dabei weder Agile noch klassisches
-PM.
+holistisch KI-ready macht, ohne Agile oder klassisches PM zu ersetzen.
 
 Es etabliert den Projektkontext als lebendige Single Source of Truth --
 eine jederzeit vollständige, aktuelle Projektwahrheit, die Ziele, Scope,
-Budget, Timeline, Risiken und Action Items intelligent miteinander
-verknüpft. Diese strukturierte Datenbasis maximiert den Mehrwert von KI
+Budget, Timeline, Risiken, Entscheidungen, Arbeitspakete und Action
+Items intelligent miteinander verknüpft. Diese strukturierte Datenbasis maximiert den Mehrwert von KI
 im Projektmanagement: Sie analysiert nicht nur Projektfragmente, sondern
 kann aus holistischer Projektsicht beraten, Guidance geben, Updates im
 Gesamtkontext bewerten und Projektanalysen durchführen. KI wird zum
@@ -91,7 +90,7 @@ KI maximiert Mehrwert des Frameworks und reduziert Zusatzaufwand
 drastisch,
 
 Wählen Sie ein Projekt mittlerer Größe und erleben Sie in 6 Wochen, wie
-künstliche Intelligent Projektmanagement transformieren kann --
+künstliche Intelligenz Projektmanagement transformieren kann --
 aufbauend auf einer aktuellen, konsistenten Projektwahrheit.
 
 # Hintergrund & Problemstellung
@@ -140,7 +139,7 @@ fehlender, konsistenter Projektwahrheit an einem Ort.
   nachgezogen werden, Backlogs sind oft unvollständig oder Projektpläne
   veraltet.
 
-- **Mangelnde Transparenz:** Reportings gehen immer nur einen Teil des
+- **Mangelnde Transparenz:** Reportings geben immer nur einen Teil des
   Projektes wieder, ganzheitliche Aussagen zum Projekt sind schwer zu
   machen und fordern zeitaufwändige breite Analysen.
 
@@ -160,7 +159,7 @@ fehlender, konsistenter Projektwahrheit an einem Ort.
 
 - **Höhere Kosten** durch späte Eskalationen und Doppelarbeit.
 
-- **Verzögerter Wertrealisierung** wegen spät erkannter
+- **Verzögerte Wertrealisierung** wegen spät erkannter
   Abhängigkeiten/Engpässe.
 
 - **Vertrauensverlust** bei Divergenz von Status und Realität.
@@ -168,7 +167,7 @@ fehlender, konsistenter Projektwahrheit an einem Ort.
 - **Schwacher Portfolioblick** ohne vergleichbare Basis über Projekte
   hinweg.
 
-- **Wissensverlusten** bei Projektänderungen, da Entscheidungen im
+- **Wissensverlust** bei Projektänderungen, da Entscheidungen im
   Nachhinein oft nicht nachvollziehbar sind.
 
 - **Künstliche Intelligenz** kann ihr transformatives Potential nicht
@@ -288,7 +287,18 @@ Verknüpfung:
 
 - Milestones, Dependencies, Risks
 
+- Decisions: dokumentierte Entscheidungen mit Begründung, Wirkung und
+  Verknüpfung zu den betroffenen Kontextelementen
+
 - Versionierte Commit-Historie mit Audit-Trail
+
+**Strukturkomponenten (optional):**
+
+- Hierarchischer Strukturbaum zur Gliederung des Projekts (z. B. nach
+  Phasen, Teilprojekten oder Gewerken)
+
+- Arbeitspakete als Blätter des Strukturbaums -- die kleinste
+  delegierbare Steuerungseinheit (siehe Kapitel Strukturebene)
 
 **Action-Komponenten:**
 
@@ -297,6 +307,9 @@ Verknüpfung:
 - Status-Lifecycle: Open → InProgress → Completed
 
 - Oder: Blocked (optional reason)
+
+- Optionale Zuordnung zu einem Arbeitspaket (bei aktivierter
+  Strukturebene)
 
 - Start/End Date pro Action Item
 
@@ -382,6 +395,80 @@ Rohsignale (Mails, Meetings, Tickets) werden zu Destillaten verdichtet:
 | **Zeitstempel** | detected\_at [YYYY-MM-DD HH:MM] · merged\_at [YYYY-MM-DD HH:MM] etc. |
 | **Confidence (AI)** | Small | Medium | High |
 
+## Strukturebene: Projektgliederung, Arbeitspakete und Rollups
+
+Mit wachsender Projektgröße braucht Steuerung eine Ebene zwischen dem
+Gesamtkontext und einzelnen Action Items. Das klassische
+Projektmanagement beantwortet dies seit Jahrzehnten mit dem
+Projektstrukturplan (PSP/WBS) und Arbeitspaketen (vgl. DIN 69901).
+CDPM übernimmt diese bewährte Gliederungslogik und gibt ihr, was ihr
+bisher fehlte: einen lebendigen Kontext.
+
+### Struktur als Teil des Kontextes
+
+Die Strukturebene ist optional -- kleine Projekte arbeiten direkt mit
+Action Items am Kontext. Wird sie aktiviert, gilt:
+
+- **Strukturbaum**: Das Projekt wird hierarchisch gegliedert (z. B.
+  nach Phasen, Teilprojekten, Gewerken oder Komponenten). Jedes
+  Element trägt einen stabilen Strukturcode; je Ebene führt eine
+  Leitdimension die Gliederung.
+
+- **Arbeitspakete**: Die Blätter des Strukturbaums sind Arbeitspakete
+  -- die kleinste delegierbare Steuerungseinheit. Ein Arbeitspaket
+  bündelt Verantwortung (verantwortliche und ausführende
+  Person/Organisation), Leistungsbeschreibung,
+  Fertigstellungskriterien, Plantermine und Planbudget.
+
+- **Action Items als Vorgänge**: Die operative Arbeit läuft weiterhin
+  über Action Items -- nun einem Arbeitspaket zugeordnet. Damit bleibt
+  jede Tätigkeit zugleich ziel- und strukturverankert.
+
+### Führung an den Blättern
+
+Zustände werden ausschließlich an den Arbeitspaketen gepflegt --
+Status, Fortschritt, Ist-Werte. Strukturknoten oberhalb zeigen
+berechnete Rollups (Budget, Fortschritt, Termine, Risiken), niemals
+manuell gepflegte Aggregate. Das ist das SSOT-Prinzip konsequent
+angewandt: Handgepflegte Summen auf Zwischenebenen erzeugen exakt die
+Doppelpflege und Widersprüche, die CDPM bei Artefakten eliminiert. Ein
+Statusbericht je Teilprojekt ist damit keine Fleißarbeit mehr, sondern
+eine Projektion.
+
+### Delegation und menschliche Abnahme
+
+Arbeitspakete machen Verantwortung delegierbar: Ein Paket kann intern
+oder extern vergeben werden, ohne dass die Kontextführerschaft
+verloren geht -- Updates aus dem Paket fließen als Destillate zurück.
+Der Statuslebenszyklus eines Arbeitspakets endet nicht mit „fertig",
+sondern mit der Abnahme: Der Status „abgenommen" wird ausschließlich
+von Menschen gesetzt. KI kann Fertigstellung erkennen und vorschlagen
+-- die Abnahme einer Leistung bleibt eine menschliche Entscheidung mit
+dokumentiertem Datum. Das verlängert das Prinzip „KI als Katalysator,
+Mensch in Verantwortung" von der Kontextpflege auf Arbeitsergebnisse.
+
+### Methodenagnostisch und domänenadaptiv
+
+Die Strukturebene macht CDPM anschlussfähig an klassische
+Planungswelten, ohne agile Arbeitsweisen einzuschränken:
+
+| Klassisches PM (DIN 69901) | CDPM |
+|----------------------------|------|
+| Projektstrukturplan (PSP) | Strukturbaum im Kontext |
+| Arbeitspaket | Arbeitspaket (Blatt des Strukturbaums, kontextverankert) |
+| Vorgang | Action Item mit Zielbezug |
+
+Darüber hinaus ist die Struktur domänenadaptiv: Welche Felder ein
+Arbeitspaket oder der Kontext trägt, wird je Branche oder Organisation
+deklarativ definiert -- ein fester semantischer Kern (Ziele, Triade,
+Verantwortung, Lebenszyklus) wird um domänenspezifische Felder ergänzt
+(z. B. Vergabeart und Gewerke im Bau, Compliance-Felder in regulierten
+Branchen). Analyse, Guidance und Destillation arbeiten unverändert auf
+dem semantischen Kern; die KI erhält die Felddefinitionen als Teil des
+Kontextes. CDPM ist damit nicht nur methodenagnostisch, sondern auch
+domänenadaptiv: Dieselbe Kontextmechanik trägt Bau-, IT-, Event- oder
+Produktprojekte.
+
 ## Rollenmodell und Governance
 
 ### Project Owner (PRO) -- Guardian of Context
@@ -438,21 +525,26 @@ Rohsignale (Mails, Meetings, Tickets) werden zu Destillaten verdichtet:
 
 7.  **Tool-Agnostik**: Kontextmodell unabhängig vom Tool-Stack
 
+8.  **Führung an den Blättern**: Zustand wird an der kleinsten
+    steuerbaren Einheit gepflegt; Aggregate werden berechnet, nie
+    doppelt gepflegt
+
 ## Betriebsrituale
 
 - **Daily Destillation Window** (10-20 min): Updates destillieren und
   committen
 
-- **Continous Context Review**: Kontext basierte Analyse- und Guidance
+- **Continuous Context Review**: Kontext basierte Analyse- und Guidance
   in Echtzeit
 
-- **Continous Reporting & Forecast**: Projektstatus, Szenarien und
+- **Continuous Reporting & Forecast**: Projektstatus, Szenarien und
   Trade-offs in Echtzeit
 
 ## Minimal Viable CDPM in 6 Schritten
 
 1.  Basis-Kontext anlegen (Description, Goals, Scope, Success Criteria,
-    Timeline, Budget, Risks)
+    Timeline, Budget, Risks); bei größeren Projekten Strukturbaum mit
+    Arbeitspaketen ergänzen
 
 2.  KI-Anbindung und Konnektoren implementieren (MCP, Chat)
 
@@ -525,7 +617,7 @@ Artefakten verschwinden, weil der Kontext führt.
 
 - Forecast Stability: Varianz der Zieltermine/Budgets ↓
 
-- Coverage: Anteil AIs mit Zielbezug/Abhängigkeiten ↑
+- Coverage: Anteil Action Items mit Zielbezug/Abhängigkeiten ↑
 
 ## Strategische Vorteile
 
@@ -599,6 +691,7 @@ Audit-Trail -- Wissen bleibt im Projektverlauf erhalten.
 | Aspekt | Klassisch | Agile | CDPM |
 |--------|-----------|-------|------|
 | Führungsgröße | Plan/Artefakte | Sprint/Backlog | Kontext (SSOT) |
+| Strukturierung | PSP/Arbeitspakete | Epics/Stories | PSP/Arbeitspakete, kontextverankert mit Rollups |
 | Umgang mit Änderung | Schwergewichtig, langsam | Flexibel, lokal | Sofortige Destillation → Rolling-Forecast |
 | Priorisierung | Meilenstein/Scope | Team-Kapazität | Ziel- & Impact-basiert |
 | Transparenz Triade | Spät sichtbar | Häufig implizit | Explizite Zeit-Budget-Scope-Effekte |
@@ -640,6 +733,11 @@ Projekte KI-fähig.
 - Wirkungsorientierte Steuerung: Action Items werden aus Zielbeitrag,
   Risiko und Zeiteffekt priorisiert -- nicht aus Sprint-Kapazität oder
   Lautstärke einzelner Stakeholder.
+
+- Anschlussfähig an klassische Strukturplanung: Projektstrukturplan und
+  Arbeitspakete leben im Kontext -- mit berechneten Rollups statt
+  handgepflegter Zwischensummen und menschlicher Abnahme je
+  Arbeitspaket.
 
 - Automatisierte Transparenz: Roadmaps, Risiko- und Statusberichte
   entstehen als Projektionen aus dem Kontext; Reporting wird

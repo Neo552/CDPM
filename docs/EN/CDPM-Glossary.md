@@ -11,6 +11,12 @@ This chapter compiles key terms of the CDPM approach in alphabetical order. Cros
 
 ## A
 
+**Acceptance (Work Package)**
+
+Human-exclusive completion of a work package with a documented date. AI can detect and suggest completion; the acceptance itself remains a human decision.
+
+*See also: Work Package, Governance Board / Sponsorship.*
+
 **Action Item (AI)**
 
 Context-bound, accountable activity with measurable impact on time/budget/scope/goals. Lifecycle: Proposed → (Refine/Split/Merge) → Committed → In Progress → Blocked/At Risk → Done/Cancelled.
@@ -71,7 +77,7 @@ A self-assessment of the certainty and evidence supporting an AI suggestion, int
 
 **Context (Project Context)**
 
-A structured, versioned model of the project's reality (Goals, Scope, Timeline, Budget, Risks, Dependencies, Success Criteria, Milestones, Action Items, Commit Log) as an SSOT.
+A structured, versioned model of the project's reality (Goals, Scope, Timeline, Budget, Risks, Dependencies, Success Criteria, Milestones, Decisions, optionally a structure tree with work packages, Action Items, Commit Log) as an SSOT.
 
 *See also: Context First, Projection, Versioning.*
 
@@ -118,6 +124,12 @@ Chain dependency whose delay directly shifts the end date; is continuously recal
 Daily short ritual (10-20 min) for reviewing & committing small distillates.
 
 *See also: Distillate, PRO.*
+
+**Decision**
+
+Documented basic component of the context: what was decided, by whom, with which rationale and effect; linked to the affected context elements.
+
+*See also: Audit Trail / Commit Log, Governance Board / Sponsorship, Context.*
 
 **Delta Latency**
 
@@ -259,6 +271,12 @@ Continuously updated forecast (time/budget/scope) between baselines; responds im
 
 *See also: Baseline, What-if Analysis.*
 
+**Rollup**
+
+Computed aggregate value (budget, progress, dates, risks) at structure nodes, derived from the work packages below. Rollups are never maintained manually (leadership at the leaves).
+
+*See also: Work Breakdown Structure (WBS), Work Package, Single Source of Truth (SSOT).*
+
 ## S
 
 **Scope**
@@ -290,6 +308,12 @@ Decomposition or consolidation of AIs for controllability/redundancy avoidance.
 Participants/affected parties who generate updates, deliver content, implement AIs - without context approval authority.
 
 *See also: Extension Components, PRO.*
+
+**Structure Definition (Domain Adaptivity)**
+
+Declarative specification of which fields the context and work packages carry in an industry/organization: a fixed semantic core plus domain-specific extension fields. Analysis, guidance, and distillation operate unchanged on the core.
+
+*See also: Context, Extension Components, Work Package.*
 
 **Success Criteria**
 
@@ -352,6 +376,18 @@ Weekly ritual for discussing analysis findings, critical paths, and prioritizing
 Simulation of variants (e.g., "+1 team → -3 weeks at +90k"), with immediately visible triad effects in the context.
 
 *See also: Rolling Forecast, Triad.*
+
+**Work Breakdown Structure (WBS) / Structure Tree**
+
+Hierarchical breakdown of the project within the context (e.g., by phases, subprojects, trades) with stable structure codes and one leading dimension per level. Leaves are work packages; inner nodes show computed rollups. Optional context component.
+
+*See also: Work Package, Rollup, Context.*
+
+**Work Package**
+
+Smallest delegable steering unit; leaf of the structure tree. Bundles responsibility, statement of work, completion criteria, planned dates, and planned budget; contains action items as activities. Leadership happens at the leaves: state lives at the work package, structure nodes show rollups.
+
+*See also: Work Breakdown Structure (WBS), Action Item, Rollup, Acceptance.*
 
 ---
 

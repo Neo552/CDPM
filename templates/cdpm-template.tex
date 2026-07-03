@@ -251,6 +251,11 @@ $endif$
 
 % Captions
 \usepackage[labelfont=bf,font=small]{caption}
+% pandoc >= 3.5 wraps uncaptioned longtables in \def\LTcaptype{none};
+% provide that caption type so the caption package accepts it
+\makeatletter
+\@ifundefined{c@none}{\DeclareCaptionType[fileext=non]{none}}{}
+\makeatother
 
 % Lists with better spacing
 \usepackage{enumitem}

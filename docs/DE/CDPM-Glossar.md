@@ -28,6 +28,14 @@ wird.
 
 *Siehe auch: Kritischer Pfad, Projektion, Rolling Forecast.*
 
+**Abnahme (Arbeitspaket)**
+
+Menschenexklusiver Abschluss eines Arbeitspakets mit dokumentiertem
+Datum. KI kann Fertigstellung erkennen und vorschlagen; die Abnahme
+selbst bleibt eine menschliche Entscheidung.
+
+*Siehe auch: Arbeitspaket, Governance Board / Sponsorship.*
+
 **Action Item (AI)**
 
 Kontextgebundene, verantwortbare Tätigkeit mit messbarer Wirkung auf
@@ -44,6 +52,16 @@ Forecast/Szenarien. Ergebnis: priorisierte Findings mit
 Guidance-Impulsen.
 
 *Siehe auch: Kontext, Rolling Forecast, What-if-Analyse.*
+
+**Arbeitspaket**
+
+Kleinste delegierbare Steuerungseinheit; Blatt des Strukturbaums.
+Bündelt Verantwortung, Leistungsbeschreibung,
+Fertigstellungskriterien, Plantermine und Planbudget; enthält Action
+Items als Vorgänge. Führung erfolgt an den Blättern: Zustand lebt am
+Arbeitspaket, Strukturknoten zeigen Rollups.
+
+*Siehe auch: Projektstrukturplan (PSP), Action Item, Rollup, Abnahme.*
 
 **Artefakt**
 
@@ -144,6 +162,15 @@ Ein Update, das auf eine einzelne Komponente des Projektkontextes abzielt (z.B. 
 
 ## E
 
+**Entscheidung (Decision)**
+
+Dokumentierte Basiskomponente des Kontextes: Was wurde entschieden,
+von wem, mit welcher Begründung und welchem Effekt; verknüpft mit den
+betroffenen Kontextelementen.
+
+*Siehe auch: Audit Trail / Commit Log, Governance Board / Sponsorship,
+Kontext.*
+
 **Erweiterungskomponenten**
 
 Optionale Kontextteile (z. B. Stakeholder, Budget Items) ergänzend zu
@@ -194,7 +221,8 @@ die PRO-Prüfung.
 
 Strukturiertes, versioniertes Modell der Projektrealität (Goals, Scope,
 Timeline, Budget, Risks, Dependencies, Success Criteria, Milestones,
-Action Items, Commit Log) als SSOT.
+Decisions, optional Strukturbaum mit Arbeitspaketen, Action Items,
+Commit Log) als SSOT.
 
 *Siehe auch: Context First, Projektion, Versionierung.*
 
@@ -267,6 +295,15 @@ Automatisch/halbautomatisch aus dem Kontext abgeleitete Darstellung
 
 *Siehe auch: Artefakt, Context First.*
 
+**Projektstrukturplan (PSP) / Strukturbaum**
+
+Hierarchische Gliederung des Projekts im Kontext (z. B. nach Phasen,
+Teilprojekten, Gewerken) mit stabilen Strukturcodes und einer
+Leitdimension je Ebene. Blätter sind Arbeitspakete; innere Knoten
+zeigen berechnete Rollups. Optionaler Kontextbestandteil.
+
+*Siehe auch: Arbeitspaket, Rollup, Kontext.*
+
 **Priorisierung (Heuristik)**
 
 Rangfolge für AIs entlang Zielbeitrag,
@@ -319,6 +356,15 @@ Baselines; reagiert unmittelbar auf Commits.
 
 *Siehe auch: Baseline, What-if-Analyse.*
 
+**Rollup**
+
+Berechneter Aggregatwert (Budget, Fortschritt, Termine, Risiken) an
+Strukturknoten, abgeleitet aus den Arbeitspaketen darunter. Rollups
+werden nie manuell gepflegt (Führung an den Blättern).
+
+*Siehe auch: Projektstrukturplan (PSP), Arbeitspaket, Single Source of
+Truth (SSOT).*
+
 ## S
 
 **Scope**
@@ -355,6 +401,15 @@ Beteiligte/Betroffene, die Updates erzeugen, Inhalte liefern, AIs
 umsetzen - ohne Kontextfreigabezuständigkeit.
 
 *Siehe auch: Erweiterungskomponenten, PRO.*
+
+**Strukturdefinition (Domänenadaptivität)**
+
+Deklarative Festlegung, welche Felder Kontext und Arbeitspakete in
+einer Branche/Organisation tragen: fester semantischer Kern plus
+domänenspezifische Erweiterungsfelder. Analyse, Guidance und
+Destillation arbeiten unverändert auf dem Kern.
+
+*Siehe auch: Kontext, Erweiterungskomponenten, Arbeitspaket.*
 
 **Success Criteria**
 

@@ -42,6 +42,7 @@ toc: true
   "Risks": [],
   "Dependencies": [],
   "SuccessCriteria": [],
+  "Decisions": [],
   "ActionItems": [],
   "CommitLog": []
 }
@@ -58,13 +59,15 @@ The following JSON template contains only the core context fields and action ite
   "fileName": "project.json",
   "folderName": "example-project",
   "categories": [
-    { "id": "cat-1", "name": "Backlog", "parentId": null, "collapsed": false }
+    { "id": "cat-1", "name": "Phase 1: Concept", "parentId": null, "collapsed": false, "kind": "structure", "pspCode": "1" },
+    { "id": "cat-2", "name": "Requirements Analysis", "parentId": "cat-1", "collapsed": false, "kind": "work_package", "pspCode": "1.1" }
   ],
   "actionItems": [
     {
       "id": 1,
       "text": "Define MVP scope",
       "description": "Acceptance criteria: MVP feature set functional, tests passed, stakeholder sign-off.",
+      "categoryId": "cat-2",
       "status": "open",
       "priority": 70,
       "impact": "high",
@@ -114,6 +117,7 @@ The following JSON template contains only the core context fields and action ite
 ```
 
 Notes:
+- Kind (categories): no kind = free category | structure = structure node (WBS) | work_package = work package; pspCode is optional and remains stable once assigned
 - Priority: integer 1–100 (1 = lowest priority, 100 = highest)
 - Impact: minimal | low | medium | high | critical
 - Complexity: very simple | simple | moderate | complex | very complex

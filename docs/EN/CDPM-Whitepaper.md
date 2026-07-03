@@ -2,7 +2,7 @@
 title: "Context-Driven Project Management"
 subtitle: "Transforming Projects Context-Centrically with AI"
 description: "A method-agnostic meta-framework for holistic, AI-enabled project management"
-version: "1.1.0"
+version: "1.2.0"
 toc: true
 ---
 
@@ -19,7 +19,7 @@ Therefore, they lack the foundation that AI needs to unleash its transformative 
 
 CDPM is a method-agnostic meta-framework that makes projects holistically AI-ready without replacing either Agile or classic PM.
 
-It establishes the project context as a living Single Source of Truth (SSOT) — a consistently complete and current model of the project reality, intelligently linking goals, scope, budget, timeline, risks, and action items. This structured data foundation maximizes the value of AI in project management: It not only analyzes project fragments but can offer advice from a holistic project perspective, provide guidance, evaluate updates within the overall context, and perform project analyses. AI becomes a continuous intelligence layer.
+It establishes the project context as a living Single Source of Truth (SSOT) — a consistently complete and current model of the project reality, intelligently linking goals, scope, budget, timeline, risks, decisions, work packages, and action items. This structured data foundation maximizes the value of AI in project management: It not only analyzes project fragments but can offer advice from a holistic project perspective, provide guidance, evaluate updates within the overall context, and perform project analyses. AI becomes a continuous intelligence layer.
 
 CDPM distinguishes 4 building blocks that form a cycle:
 
@@ -204,7 +204,18 @@ The context contains all project-relevant elements in semantic linkage:
 
 - Milestones, Dependencies, Risks
 
+- Decisions: documented decisions with rationale, effect, and links to
+  the affected context elements
+
 - Versioned commit history with audit trail
+
+**Structure components (optional):**
+
+- Hierarchical structure tree for breaking down the project (e.g., by
+  phases, subprojects, or trades)
+
+- Work packages as leaves of the structure tree -- the smallest
+  delegable steering unit (see chapter Structure Level)
 
 **Action components:**
 
@@ -213,6 +224,9 @@ The context contains all project-relevant elements in semantic linkage:
 - Status lifecycle: Open → InProgress → Completed
 
 - Or: Blocked (optional reason)
+
+- Optional assignment to a work package (when the structure level is
+  activated)
 
 - Start/End Date per action item
 
@@ -290,6 +304,77 @@ Raw signals (emails, meetings, tickets) are condensed into distillates:
 | **Timestamp** | detected_at [YYYY-MM-DD HH:MM] · merged_at [YYYY-MM-DD HH:MM] etc. |
 | **Confidence (AI)** | Small | Medium | High |
 
+## Structure Level: Project Breakdown, Work Packages, and Rollups
+
+As projects grow, steering needs a level between the overall context
+and individual action items. Classic project management has answered
+this for decades with the work breakdown structure (WBS) and work
+packages (cf. DIN 69901). CDPM adopts this proven breakdown logic and
+gives it what it previously lacked: a living context.
+
+### Structure as Part of the Context
+
+The structure level is optional -- small projects work directly with
+action items on the context. When activated, the following applies:
+
+- **Structure tree**: The project is broken down hierarchically (e.g.,
+  by phases, subprojects, trades, or components). Each element carries
+  a stable structure code; one leading dimension governs the breakdown
+  per level.
+
+- **Work packages**: The leaves of the structure tree are work
+  packages -- the smallest delegable steering unit. A work package
+  bundles responsibility (accountable and executing person or
+  organization), statement of work, completion criteria, planned
+  dates, and planned budget.
+
+- **Action items as activities**: Operational work continues to run
+  through action items -- now assigned to a work package. Every
+  activity thus remains anchored to both goals and structure.
+
+### Leadership at the Leaves
+
+State is maintained exclusively at the work packages -- status,
+progress, actuals. Structure nodes above them show computed rollups
+(budget, progress, dates, risks), never manually maintained
+aggregates. This is the SSOT principle applied consistently:
+hand-maintained sums at intermediate levels create exactly the double
+maintenance and contradictions that CDPM eliminates for artifacts. A
+status report per subproject is no longer busywork but a projection.
+
+### Delegation and Human Acceptance
+
+Work packages make responsibility delegable: a package can be awarded
+internally or externally without losing context leadership -- updates
+from the package flow back as distillates. The status lifecycle of a
+work package does not end with "done" but with acceptance: the status
+"accepted" is set exclusively by humans. AI can detect and suggest
+completion -- accepting a deliverable remains a human decision with a
+documented date. This extends the principle "AI as catalyst, human in
+responsibility" from context maintenance to work results.
+
+### Method-Agnostic and Domain-Adaptive
+
+The structure level makes CDPM compatible with classic planning worlds
+without constraining agile ways of working:
+
+| Classic PM (DIN 69901) | CDPM |
+|------------------------|------|
+| Work breakdown structure (WBS) | Structure tree in the context |
+| Work package | Work package (leaf of the structure tree, context-anchored) |
+| Activity | Action item with goal reference |
+
+Beyond that, the structure is domain-adaptive: which fields a work
+package or the context carries is defined declaratively per industry
+or organization -- a fixed semantic core (goals, triad,
+responsibility, lifecycle) is supplemented with domain-specific fields
+(e.g., procurement type and trades in construction, compliance fields
+in regulated industries). Analysis, guidance, and distillation operate
+unchanged on the semantic core; the AI receives the field definitions
+as part of the context. CDPM is thus not only method-agnostic but also
+domain-adaptive: the same context mechanics carry construction, IT,
+event, or product projects.
+
 ## Role Model and Governance
 
 ### Project Owner (PRO) -- Guardian of Context
@@ -336,6 +421,9 @@ Raw signals (emails, meetings, tickets) are condensed into distillates:
 
 7. **Tool-agnostic**: Context model independent of tool stack
 
+8. **Leadership at the leaves**: State is maintained at the smallest
+   steerable unit; aggregates are computed, never maintained twice
+
 ## Operating Rituals
 
 - **Daily Distillation Window** (10-20 min): Distill and commit updates
@@ -346,7 +434,7 @@ Raw signals (emails, meetings, tickets) are condensed into distillates:
 
 ## Minimal Viable CDPM in 6 Steps
 
-1. Create basic context (Description, Goals, Scope, Success Criteria, Timeline, Budget, Risks)
+1. Create basic context (Description, Goals, Scope, Success Criteria, Timeline, Budget, Risks); for larger projects, add a structure tree with work packages
 
 2. Implement AI connection and connectors (MCP, Chat)
 
@@ -404,7 +492,7 @@ Existing tools can remain in use. Contradictions between artifacts disappear bec
 
 - Forecast Stability: Variance of target dates/budgets ↓
 
-- Coverage: Share of AIs with goal reference/dependencies ↑
+- Coverage: Share of action items with goal reference/dependencies ↑
 
 ## Strategic Benefits
 
@@ -467,6 +555,7 @@ Changes are expected impulses; transparent deltas prevent "watermelon effects".
 | Aspect | Classic | Agile | CDPM |
 |--------|---------|-------|------|
 | Leading Variable | Plan/Artifacts | Sprint/Backlog | Context (SSOT) |
+| Structuring | WBS/Work packages | Epics/Stories | WBS/Work packages, context-anchored with rollups |
 | Handling Change | Heavyweight, slow | Flexible, local | Immediate distillation → Rolling forecast |
 | Prioritization | Milestone/Scope | Team capacity | Goal & impact-based |
 | Triad Transparency | Late visible | Often implicit | Explicit time-budget-scope effects |
@@ -488,6 +577,8 @@ Context Driven Project Management (CDPM) shifts the leading variable in projects
 - Planability without rigidity: Rolling forecast instead of fixed-date plan; effects of individual deltas are immediately quantified (time/budget/scope).
 
 - Impact-oriented control: Action items are prioritized from goal contribution, risk, and time effect -- not from sprint capacity or stakeholder volume.
+
+- Compatible with classic structure planning: The work breakdown structure and work packages live in the context -- with computed rollups instead of hand-maintained subtotals and human acceptance per work package.
 
 - Automated transparency: Roadmaps, risk and status reports emerge as projections from the context; reporting becomes a byproduct.
 

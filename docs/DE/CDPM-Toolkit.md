@@ -42,6 +42,7 @@ toc: true
   "Risks": [],
   "Dependencies": [],
   "SuccessCriteria": [],
+  "Decisions": [],
   "ActionItems": [],
   "CommitLog": []
 }
@@ -58,13 +59,15 @@ Die folgende JSON-Vorlage enthält nur die Core-Kontextfelder und Action Items.
   "fileName": "project.json",
   "folderName": "beispielprojekt",
   "categories": [
-    { "id": "cat-1", "name": "Backlog", "parentId": null, "collapsed": false }
+    { "id": "cat-1", "name": "Phase 1: Konzeption", "parentId": null, "collapsed": false, "kind": "structure", "pspCode": "1" },
+    { "id": "cat-2", "name": "Anforderungsanalyse", "parentId": "cat-1", "collapsed": false, "kind": "work_package", "pspCode": "1.1" }
   ],
   "actionItems": [
     {
       "id": 1,
       "text": "MVP-Scope definieren",
       "description": "Akzeptanzkriterien: MVP-Feature-Set funktionsfähig, Tests bestanden, Abnahme durch Stakeholder.",
+      "categoryId": "cat-2",
       "status": "open",
       "priority": 70,
       "impact": "high",
@@ -114,6 +117,7 @@ Die folgende JSON-Vorlage enthält nur die Core-Kontextfelder und Action Items.
 ```
 
 Hinweise:
+- Kind (categories): ohne kind = freie Kategorie | structure = Strukturknoten (PSP) | work_package = Arbeitspaket; pspCode ist optional und bleibt nach Vergabe stabil
 - Priority: Ganzzahl 1–100 (1 = niedrigste Priorität, 100 = höchste)
 - Impact: minimal | low | medium | high | critical
 - Complexity: very simple | simple | moderate | complex | very complex
