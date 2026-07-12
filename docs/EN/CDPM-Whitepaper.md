@@ -23,7 +23,7 @@ It establishes the project context as a living Single Source of Truth (SSOT) —
 
 CDPM distinguishes 4 building blocks that form a cycle:
 
-**Context → Analysis → Guidance → Updates → Context***
+**Context → Analysis → Guidance → Signals → Context***
 
 *rolling, SSOT leads
 
@@ -126,7 +126,7 @@ A future-proof project management framework needs:
 
 4. **Holistic guidance instead of task management:** Next steps are derived from context and prioritized.
 
-5. **Updates as raw material, distillates as truth:** Signals are distilled and only become binding with context integration.
+5. **Signals as raw material, distillates as truth:** Signals are distilled and only become binding with context integration.
 
 6. **AI as catalyst, human in responsibility:** AI generates/checks/simulates; approval remains with a designated role (Project Owner/PRO).
 
@@ -270,11 +270,11 @@ Guidance translates analysis results into prioritized action items:
 
 Action items differ from classic tasks: They must change a measurable project state and are explicitly linked to context elements.
 
-### Updates -- Distillation as Quality Gate
+### Signals -- Distillation as Quality Gate
 
 Raw signals (emails, meetings, tickets) are condensed into distillates:
 
-- **"One update, multiple distillates"**: A raw signal is broken down into atomic effects
+- **"One signal, multiple distillates"**: A raw signal is broken down into atomic effects
 
 - Each distillate addresses exactly one context component
 
@@ -409,7 +409,7 @@ event, or product projects.
 
 1. **Context First**: Project truth always in context, artifacts follow
 
-2. **Atomic Distillation:** Complex updates are broken down into individually validatable, one-dimensional effects - this increases precision and enables selective commits
+2. **Atomic Distillation:** Complex signals are broken down into individually validatable, one-dimensional effects - this increases precision and enables selective commits
 
 3. **Continuous Distillations**: Changes are continuously incorporated into the context
 
@@ -426,7 +426,7 @@ event, or product projects.
 
 ## Operating Rituals
 
-- **Daily Distillation Window** (10-20 min): Distill and commit updates
+- **Daily Distillation Window** (10-20 min): Distill signals and commit confirmed deltas
 
 - **Continuous Context Review**: Context-based analysis and guidance in real-time
 
@@ -448,7 +448,7 @@ event, or product projects.
 
 # Value Creation
 
-CDPM creates measurable value along three impact levels: operational, strategic, and cultural. All effects arise from context leadership, traceability, transformative AI impact, and the continuous cycle of Context → Analysis → Guidance → Updates.
+CDPM creates measurable value along three impact levels: operational, strategic, and cultural. All effects arise from context leadership, traceability, transformative AI impact, and the continuous cycle of Context → Analysis → Guidance → Signals → Context.
 
 ## Operational Benefits
 
@@ -482,9 +482,9 @@ Existing tools can remain in use. Contradictions between artifacts disappear bec
 
 #### Metrics
 
-- Delta Latency: Time from raw update → context commit ↓
+- Delta Latency: Time from raw signal → context commit ↓
 
-- Pending Exposure (PX): Critical pending updates above threshold ↓
+- Pending Exposure (PX): Critical unconfirmed deltas above threshold ↓
 
 - Decision-on-Context Rate (DoCR): Decisions with commit reference ↑
 
@@ -609,7 +609,7 @@ The pace of markets, tech, and regulation forces low latency between signal and 
 
 ## Final Thought
 
-CDPM is evolution, not revolution. It makes project management intelligent, adaptive, and verifiable -- with immediately noticeable benefits in the pilot and clear scalability to the portfolio. The journey begins with a first, clean context and the discipline to break down updates into atomic distillates. The rest is consistent application -- and leads from complexity to clarity with impact.
+CDPM is evolution, not revolution. It makes project management intelligent, adaptive, and verifiable -- with immediately noticeable benefits in the pilot and clear scalability to the portfolio. The journey begins with a first, clean context and the discipline to break down signals into atomic distillates. The rest is consistent application -- and leads from complexity to clarity with impact.
 
 # References {.unnumbered}
 

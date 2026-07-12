@@ -30,13 +30,13 @@ eine jederzeit vollständige, aktuelle Projektwahrheit, die Ziele, Scope,
 Budget, Timeline, Risiken, Entscheidungen, Arbeitspakete und Action
 Items intelligent miteinander verknüpft. Diese strukturierte Datenbasis maximiert den Mehrwert von KI
 im Projektmanagement: Sie analysiert nicht nur Projektfragmente, sondern
-kann aus holistischer Projektsicht beraten, Guidance geben, Updates im
+kann aus holistischer Projektsicht beraten, Guidance geben, neue Signale im
 Gesamtkontext bewerten und Projektanalysen durchführen. KI wird zum
 durchgängigen Intelligenz-Layer.
 
 CDPM unterscheidet 4 Bausteine, die einen Kreislauf bilden:
 
-**Context → Analysis → Guidance → Updates → Context***
+**Context → Analysis → Guidance → Signals → Context***
 
 *rollierend, SSOT führt
 
@@ -193,7 +193,7 @@ Ein zukunftsfähiges Projekt Management Framework braucht:
 4.  **Holistische Guidance statt Task-Verwaltung:** Nächste Schritte
     werden aus dem Kontext abgeleitet und priorisiert.
 
-5.  **Updates als Rohstoff, Destillate als Wahrheit:** Signale werden
+5.  **Signale als Rohstoff, Destillate als Wahrheit:** Signale werden
     destilliert und erst mit Kontextintegration verbindlich.
 
 6.  **KI als Katalysator, Mensch in Verantwortung:** KI
@@ -358,11 +358,11 @@ Action Items unterscheiden sich von klassischen Tasks: Sie müssen einen
 messbaren Projektzustand verändern und sind explizit an Kontextelemente
 gekoppelt.
 
-### Updates -- Destillation als Quality Gate
+### Signals -- Destillation als Quality Gate
 
 Rohsignale (Mails, Meetings, Tickets) werden zu Destillaten verdichtet:
 
-- "**Ein Update, mehrere Destillate"**: Ein Rohsignal wird in atomare
+- "**Ein Signal, mehrere Destillate"**: Ein Rohsignal wird in atomare
   Effekte zerlegt
 
 - Jedes Destillat adressiert genau eine Kontextkomponente
@@ -508,7 +508,7 @@ Produktprojekte.
 1.  **Context First**: Projektwahrheit immer im Kontext, Artefakte
     folgen
 
-2.  **Atomic Destillation:** Komplexe Updates werden in einzeln
+2.  **Atomic Destillation:** Komplexe Signale werden in einzeln
     validierbare, eindimensionale Effekte zerlegt - dies erhöht
     Präzision und ermöglicht selektive Commits
 
@@ -531,7 +531,7 @@ Produktprojekte.
 
 ## Betriebsrituale
 
-- **Daily Destillation Window** (10-20 min): Updates destillieren und
+- **Daily Destillation Window** (10-20 min): Signale destillieren und
   committen
 
 - **Continuous Context Review**: Kontext basierte Analyse- und Guidance
@@ -561,9 +561,9 @@ Produktprojekte.
 
 CDPM schafft einen messbaren Mehrwert entlang drei Wirkungsebenen:
 operativ, strategisch und kulturell. Alle Effekte entstehen aus der
-Kontextführerschaft, der Nachvollziehbarkeit, der transformativen
-KI-Wirkung und dem kontinuierlichen Kreislauf aus Kontext → Analyse →
-Guidance → Updates.
+Kontextführerschaft, der Nachvollziehbarkeit und der transformativen
+KI-Wirkung im kontinuierlichen Kreislauf: Context → Analysis → Guidance →
+Signals → Context.
 
 ## Operative Vorteile
 
@@ -607,9 +607,9 @@ Artefakten verschwinden, weil der Kontext führt.
 
 #### Messgrößen
 
-- Delta Latency: Zeit von Roh-Update → Kontext-Commit ↓
+- Delta Latency: Zeit vom Rohsignal → Kontext-Commit ↓
 
-- Pending Exposure (PX): Kritische Pending-Updates über Schwelle ↓
+- Pending Exposure (PX): Kritische unbestätigte Deltas über Schwelle ↓
 
 - Decision-on-Context Rate (DoCR): Entscheidungen mit Commit-Referenz ↑
 
@@ -791,7 +791,7 @@ Prüfinstanzen.
 CDPM ist Evolution statt Revolution. Es macht Projektmanagement
 intelligent, adaptiv und überprüfbar -- mit sofort spürbarem Nutzen im
 Piloten und klarer Skalierbarkeit ins Portfolio. Der Weg beginnt mit
-einem ersten, sauberen Kontext und der Disziplin, Updates in atomare
+einem ersten, sauberen Kontext und der Disziplin, Signale in atomare
 Destillate zu zerlegen. Der Rest ist konsequente Anwendung -- und führt
 von Komplexität zu Klarheit mit Wirkung.
 
