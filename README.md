@@ -108,5 +108,5 @@ This work is licensed under CC BY 4.0 - see [LICENSE](LICENSE) for details.
 
 ## Trademarks
 
-"CDPM" and "Guardian of Context" are trademarks of Simon Schwer (protection pending in Germany).
+"CDPM" and "Guardian of Context" are registered trademarks of Simon Schwer in Germany.
 Usage according to CDPM usage guidelines: contextdrivenpm.org/license

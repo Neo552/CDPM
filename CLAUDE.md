@@ -60,7 +60,7 @@ Automated PDF building on push/PR to main branch and releases (`/.github/workflo
 - Line spacing defaults to 1.4 for readability
 
 ### Trademarks
-"CDPM" and "Guardian of Context" are trademarks of Simon Schwer (protection pending in Germany)
+"CDPM" and "Guardian of Context" are registered trademarks of Simon Schwer in Germany
 
 ### Contribution Guidelines
 - Framework development focuses on methodology enhancements and real-world patterns
